@@ -36,6 +36,7 @@
 		40DE2F5B1B1B434A008585BF /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F5A1B1B434A008585BF /* libfreetype.6.dylib */; };
 		40DE2F5E1B1B4825008585BF /* world.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5C1B1B4825008585BF /* world.c */; };
 		40DE2F611B1B90AA008585BF /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5F1B1B90AA008585BF /* player.c */; };
+		40DE2F641B1BC6FC008585BF /* collision.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F621B1BC6FC008585BF /* collision.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,8 @@
 		40DE2F5D1B1B4825008585BF /* world.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = world.h; sourceTree = "<group>"; };
 		40DE2F5F1B1B90AA008585BF /* player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = player.c; sourceTree = "<group>"; };
 		40DE2F601B1B90AA008585BF /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		40DE2F621B1BC6FC008585BF /* collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = collision.c; sourceTree = "<group>"; };
+		40DE2F631B1BC6FC008585BF /* collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collision.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 				40DE2F5D1B1B4825008585BF /* world.h */,
 				40DE2F5F1B1B90AA008585BF /* player.c */,
 				40DE2F601B1B90AA008585BF /* player.h */,
+				40DE2F621B1BC6FC008585BF /* collision.c */,
+				40DE2F631B1BC6FC008585BF /* collision.h */,
 			);
 			path = CGame;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DE2F641B1BC6FC008585BF /* collision.c in Sources */,
 				40DE2F5E1B1B4825008585BF /* world.c in Sources */,
 				40DE2F211B1B0C2D008585BF /* main.c in Sources */,
 				40DE2F611B1B90AA008585BF /* player.c in Sources */,

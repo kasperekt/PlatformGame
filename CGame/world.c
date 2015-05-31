@@ -22,9 +22,12 @@ void init_world(const int width, const int height)
   init_player(20.0, world->floor, world->floor);
 }
 
-void draw_world()
+void draw_world(bool *pressed)
 {
   al_draw_filled_rectangle(0, world->floor, world->width, world->height, al_map_rgb(255, 0, 0));
+  CollisionType collision = detect_collision();
+  move_player(pressed, collision);
+  
   draw_player();
 }
 

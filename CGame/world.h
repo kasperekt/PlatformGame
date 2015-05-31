@@ -13,6 +13,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include "player.h"
+#include "collision.h"
 
 struct world {
   float floor;
@@ -20,7 +21,7 @@ struct world {
 };
 
 void init_world(const int width, const int height);
-void draw_world();
+void draw_world(bool *pressed);
 void destroy_world();
 
 #endif /* defined(__CGame__world__) */

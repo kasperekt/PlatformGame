@@ -15,6 +15,7 @@ void init_player(float x, float y, float floor_limit)
   player = malloc(sizeof(*player));
   player->x = x;
   player->y = y;
+  player->size = 20;
   player->speed = 2;
   player->floor_limit = floor_limit;
   player->velocity_y = 0.0;
@@ -34,7 +35,7 @@ void draw_player()
     }
   }
   
-  al_draw_rectangle(player->x, player->y - 50, player->x + 20, player->y, al_map_rgb(255, 255, 255), 4);
+  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 4);
 }
 
 void jump()
@@ -43,7 +44,7 @@ void jump()
   player->velocity_y = -9.0;
 }
 
-void move_player(bool *pressed)
+void move_player(bool *pressed, CollisionType collision)
 {
   if(pressed[ALLEGRO_KEY_RIGHT]) player->x += player->speed;
   else if(pressed[ALLEGRO_KEY_LEFT]) player->x -= player->speed;

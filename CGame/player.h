@@ -12,9 +12,11 @@
 #include <stdio.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_primitives.h>
+#include "collision.h"
 
 struct player {
   float x, y;
+  float size;
   float speed;
   float velocity_y;
   float floor_limit;
@@ -24,8 +26,9 @@ struct player {
 extern struct player* player;
 
 void init_player(float x, float y, float floor_limit);
-void move_player(bool *pressed);
+void move_player(bool *pressed, CollisionType collision);
 void destroy_player();
 void draw_player();
+void jump();
 
 #endif /* defined(__CGame__player__) */

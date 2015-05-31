@@ -17,6 +17,8 @@ ALLEGRO_FONT *main_font = NULL;
 const int screen_width = 800;
 const int screen_height = 600;
 
+bool pressed_keys[ALLEGRO_KEY_MAX] = { false };
+
 void abort_game(const char* message)
 {
   fprintf(stderr, "%s\n", message);
@@ -69,14 +71,12 @@ void game_shutdown()
 void draw()
 {
   al_clear_to_color(al_map_rgb(0, 0, 0));
-  draw_world();
+  draw_world(pressed_keys);
   al_flip_display();
 }
 
 void game_loop()
 {
-  bool pressed_keys[ALLEGRO_KEY_MAX] = { false };
-  
   bool redraw = true;
   al_start_timer(timer);
   init_world(screen_width, screen_height);
@@ -96,7 +96,6 @@ void game_loop()
     
     if(redraw && al_is_event_queue_empty(event_queue)) {
       redraw = false;
-      move_player(pressed_keys);
       draw();
     }
   }
