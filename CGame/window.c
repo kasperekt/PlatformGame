@@ -75,10 +75,7 @@ void draw()
 
 void game_loop()
 {
-  bool pressed_keys[ALLEGRO_KEY_MAX];
-  pressed_keys[ALLEGRO_KEY_LEFT] = false;
-  pressed_keys[ALLEGRO_KEY_RIGHT] = false;
-  pressed_keys[ALLEGRO_KEY_UP] = false;
+  bool pressed_keys[ALLEGRO_KEY_MAX] = { false };
   
   bool redraw = true;
   al_start_timer(timer);

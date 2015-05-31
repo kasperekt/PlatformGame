@@ -21,6 +21,8 @@ struct player {
   int on_ground;
 };
 
+extern struct player* player;
+
 void init_player(float x, float y, float floor_limit);
 void move_player(bool *pressed);
 void destroy_player();
