@@ -34,7 +34,7 @@ void draw_player()
     }
   }
   
-  al_draw_rectangle(player->x, player->y - 50, player->x + 10, player->y, al_map_rgb(255, 255, 255), 4);
+  al_draw_rectangle(player->x, player->y - 50, player->x + 20, player->y, al_map_rgb(255, 255, 255), 4);
 }
 
 void jump()
