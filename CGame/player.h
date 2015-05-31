@@ -16,9 +16,12 @@
 struct player {
   float x, y;
   float speed;
+  float velocity_y;
+  float floor_limit;
+  int on_ground;
 };
 
-void init_player(float x, float y);
+void init_player(float x, float y, float floor_limit);
 void move_player(bool *pressed);
 void destroy_player();
 void draw_player();

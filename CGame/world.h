@@ -14,8 +14,13 @@
 #include <allegro5/allegro_primitives.h>
 #include "player.h"
 
-void init_world();
-void draw_world(const int width, const int height);
+struct world {
+  float floor;
+  int width, height;
+};
+
+void init_world(const int width, const int height);
+void draw_world();
 void destroy_world();
 
 #endif /* defined(__CGame__world__) */

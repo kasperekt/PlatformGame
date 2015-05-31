@@ -69,8 +69,7 @@ void game_shutdown()
 void draw()
 {
   al_clear_to_color(al_map_rgb(0, 0, 0));
-  draw_world(screen_width, screen_height);
-  al_draw_text(main_font, al_map_rgb(44, 117, 255), screen_width / 2, screen_height / 2, ALLEGRO_ALIGN_CENTER, "TOMEK TO KRÓL");
+  draw_world();
   al_flip_display();
 }
 
@@ -83,7 +82,7 @@ void game_loop()
   
   bool redraw = true;
   al_start_timer(timer);
-  init_world();
+  init_world(screen_width, screen_height);
   
   while(!done) {
     ALLEGRO_EVENT event;
@@ -92,11 +91,8 @@ void game_loop()
     if(event.type == ALLEGRO_EVENT_TIMER) {
       redraw = true;
     } else if(event.type == ALLEGRO_EVENT_KEY_DOWN) {
-      if(event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-        done = true;
-      } else {
-        pressed_keys[event.keyboard.keycode] = true;
-      }
+      if(event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) done = true;
+      else pressed_keys[event.keyboard.keycode] = true;
     } else if(event.type == ALLEGRO_EVENT_KEY_UP) {
       pressed_keys[event.keyboard.keycode] = false;
     }

@@ -13,6 +13,8 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_font.h>
+#include <OpenGL/OpenGL.h>
+#include <OpenGL/gl.h>
 #include "world.h"
 
 extern bool done;
