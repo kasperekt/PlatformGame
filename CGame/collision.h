@@ -10,14 +10,9 @@
 #define __CGame__collision__
 
 #include <stdio.h>
+#include "collisiontype.h"
 #include "player.h"
-
-typedef enum {
-  KILL_ENEMY,
-  KILL_PLAYER,
-  TOUCH_OBSTACLE,
-  NONE
-} CollisionType;
+#include "crate.h"
 
 CollisionType detect_collision();
 

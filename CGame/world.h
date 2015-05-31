@@ -13,6 +13,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include "player.h"
+#include "crate.h"
 #include "collision.h"
 
 struct world {

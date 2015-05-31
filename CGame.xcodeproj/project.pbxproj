@@ -37,6 +37,7 @@
 		40DE2F5E1B1B4825008585BF /* world.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5C1B1B4825008585BF /* world.c */; };
 		40DE2F611B1B90AA008585BF /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5F1B1B90AA008585BF /* player.c */; };
 		40DE2F641B1BC6FC008585BF /* collision.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F621B1BC6FC008585BF /* collision.c */; };
+		40E1AF651B1BCC3D009DFF09 /* crate.c in Sources */ = {isa = PBXBuildFile; fileRef = 40E1AF631B1BCC3D009DFF09 /* crate.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +88,9 @@
 		40DE2F601B1B90AA008585BF /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		40DE2F621B1BC6FC008585BF /* collision.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = collision.c; sourceTree = "<group>"; };
 		40DE2F631B1BC6FC008585BF /* collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collision.h; sourceTree = "<group>"; };
+		40E1AF621B1BCA35009DFF09 /* collisiontype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = collisiontype.h; sourceTree = "<group>"; };
+		40E1AF631B1BCC3D009DFF09 /* crate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crate.c; sourceTree = "<group>"; };
+		40E1AF641B1BCC3D009DFF09 /* crate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,9 @@
 				40DE2F601B1B90AA008585BF /* player.h */,
 				40DE2F621B1BC6FC008585BF /* collision.c */,
 				40DE2F631B1BC6FC008585BF /* collision.h */,
+				40E1AF621B1BCA35009DFF09 /* collisiontype.h */,
+				40E1AF631B1BCC3D009DFF09 /* crate.c */,
+				40E1AF641B1BCC3D009DFF09 /* crate.h */,
 			);
 			path = CGame;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 				40DE2F641B1BC6FC008585BF /* collision.c in Sources */,
 				40DE2F5E1B1B4825008585BF /* world.c in Sources */,
 				40DE2F211B1B0C2D008585BF /* main.c in Sources */,
+				40E1AF651B1BCC3D009DFF09 /* crate.c in Sources */,
 				40DE2F611B1B90AA008585BF /* player.c in Sources */,
 				40DE2F591B1B1AA1008585BF /* window.c in Sources */,
 			);
@@ -379,6 +387,7 @@
 				40DE2F261B1B0C2D008585BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

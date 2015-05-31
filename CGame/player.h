@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_primitives.h>
-#include "collision.h"
+#include "collisiontype.h"
 
 struct player {
   float x, y;
@@ -20,7 +20,7 @@ struct player {
   float speed;
   float velocity_y;
   float floor_limit;
-  int on_ground;
+  int jumping;
 };
 
 extern struct player* player;
