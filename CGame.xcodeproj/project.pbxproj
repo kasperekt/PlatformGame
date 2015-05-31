@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40DE2F211B1B0C2D008585BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F201B1B0C2D008585BF /* main.c */; };
+		40DE2F391B1B0C39008585BF /* liballegro_acodec-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */; };
+		40DE2F3A1B1B0C39008585BF /* liballegro_audio-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */; };
+		40DE2F3B1B1B0C39008585BF /* liballegro_color-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F291B1B0C39008585BF /* liballegro_color-static.a */; };
+		40DE2F3C1B1B0C39008585BF /* liballegro_dialog-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2A1B1B0C39008585BF /* liballegro_dialog-static.a */; };
+		40DE2F3D1B1B0C39008585BF /* liballegro_font-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2B1B1B0C39008585BF /* liballegro_font-static.a */; };
+		40DE2F3E1B1B0C39008585BF /* liballegro_image-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2C1B1B0C39008585BF /* liballegro_image-static.a */; };
+		40DE2F3F1B1B0C39008585BF /* liballegro_main-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2D1B1B0C39008585BF /* liballegro_main-static.a */; };
+		40DE2F401B1B0C39008585BF /* liballegro_memfile-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2E1B1B0C39008585BF /* liballegro_memfile-static.a */; };
+		40DE2F411B1B0C39008585BF /* liballegro_physfs-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F2F1B1B0C39008585BF /* liballegro_physfs-static.a */; };
+		40DE2F421B1B0C39008585BF /* liballegro_primitives-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F301B1B0C39008585BF /* liballegro_primitives-static.a */; };
+		40DE2F431B1B0C39008585BF /* liballegro_ttf-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F311B1B0C39008585BF /* liballegro_ttf-static.a */; };
+		40DE2F441B1B0C39008585BF /* liballegro-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F321B1B0C39008585BF /* liballegro-static.a */; };
+		40DE2F451B1B0C39008585BF /* libdumb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F331B1B0C39008585BF /* libdumb.a */; };
+		40DE2F461B1B0C39008585BF /* libphysfs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F341B1B0C39008585BF /* libphysfs.a */; };
+		40DE2F471B1B0C39008585BF /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F351B1B0C39008585BF /* libvorbis.a */; };
+		40DE2F481B1B0C39008585BF /* libvorbisfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F361B1B0C39008585BF /* libvorbisfile.a */; };
+		40DE2F491B1B0C39008585BF /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F371B1B0C39008585BF /* libogg.a */; };
+		40DE2F4A1B1B0C39008585BF /* libFLAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F381B1B0C39008585BF /* libFLAC.a */; };
+		40DE2F4D1B1B0CBC008585BF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F4B1B1B0CBC008585BF /* OpenAL.framework */; };
+		40DE2F4E1B1B0CBC008585BF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F4C1B1B0CBC008585BF /* OpenGL.framework */; };
+		40DE2F511B1B0CD8008585BF /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F4F1B1B0CD8008585BF /* AppKit.framework */; };
+		40DE2F521B1B0CD8008585BF /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F501B1B0CD8008585BF /* ApplicationServices.framework */; };
+		40DE2F541B1B0CDF008585BF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F531B1B0CDF008585BF /* IOKit.framework */; };
+		40DE2F561B1B0CE8008585BF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F551B1B0CE8008585BF /* CoreFoundation.framework */; };
+		40DE2F591B1B1AA1008585BF /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F571B1B1AA1008585BF /* window.c */; };
+		40DE2F5B1B1B434A008585BF /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F5A1B1B434A008585BF /* libfreetype.6.dylib */; };
+		40DE2F5E1B1B4825008585BF /* world.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5C1B1B4825008585BF /* world.c */; };
+		40DE2F611B1B90AA008585BF /* player.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F5F1B1B90AA008585BF /* player.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40DE2F1B1B1B0C2D008585BF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40DE2F1D1B1B0C2D008585BF /* CGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CGame; sourceTree = BUILT_PRODUCTS_DIR; };
+		40DE2F201B1B0C2D008585BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_acodec-static.a"; path = "../../../../usr/local/lib/liballegro_acodec-static.a"; sourceTree = "<group>"; };
+		40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_audio-static.a"; path = "../../../../usr/local/lib/liballegro_audio-static.a"; sourceTree = "<group>"; };
+		40DE2F291B1B0C39008585BF /* liballegro_color-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_color-static.a"; path = "../../../../usr/local/lib/liballegro_color-static.a"; sourceTree = "<group>"; };
+		40DE2F2A1B1B0C39008585BF /* liballegro_dialog-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_dialog-static.a"; path = "../../../../usr/local/lib/liballegro_dialog-static.a"; sourceTree = "<group>"; };
+		40DE2F2B1B1B0C39008585BF /* liballegro_font-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_font-static.a"; path = "../../../../usr/local/lib/liballegro_font-static.a"; sourceTree = "<group>"; };
+		40DE2F2C1B1B0C39008585BF /* liballegro_image-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_image-static.a"; path = "../../../../usr/local/lib/liballegro_image-static.a"; sourceTree = "<group>"; };
+		40DE2F2D1B1B0C39008585BF /* liballegro_main-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_main-static.a"; path = "../../../../usr/local/lib/liballegro_main-static.a"; sourceTree = "<group>"; };
+		40DE2F2E1B1B0C39008585BF /* liballegro_memfile-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_memfile-static.a"; path = "../../../../usr/local/lib/liballegro_memfile-static.a"; sourceTree = "<group>"; };
+		40DE2F2F1B1B0C39008585BF /* liballegro_physfs-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_physfs-static.a"; path = "../../../../usr/local/lib/liballegro_physfs-static.a"; sourceTree = "<group>"; };
+		40DE2F301B1B0C39008585BF /* liballegro_primitives-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_primitives-static.a"; path = "../../../../usr/local/lib/liballegro_primitives-static.a"; sourceTree = "<group>"; };
+		40DE2F311B1B0C39008585BF /* liballegro_ttf-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_ttf-static.a"; path = "../../../../usr/local/lib/liballegro_ttf-static.a"; sourceTree = "<group>"; };
+		40DE2F321B1B0C39008585BF /* liballegro-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro-static.a"; path = "../../../../usr/local/lib/liballegro-static.a"; sourceTree = "<group>"; };
+		40DE2F331B1B0C39008585BF /* libdumb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdumb.a; path = ../../../../usr/local/lib/libdumb.a; sourceTree = "<group>"; };
+		40DE2F341B1B0C39008585BF /* libphysfs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libphysfs.a; path = ../../../../usr/local/lib/libphysfs.a; sourceTree = "<group>"; };
+		40DE2F351B1B0C39008585BF /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = ../../../../usr/local/lib/libvorbis.a; sourceTree = "<group>"; };
+		40DE2F361B1B0C39008585BF /* libvorbisfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbisfile.a; path = ../../../../usr/local/lib/libvorbisfile.a; sourceTree = "<group>"; };
+		40DE2F371B1B0C39008585BF /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = ../../../../usr/local/lib/libogg.a; sourceTree = "<group>"; };
+		40DE2F381B1B0C39008585BF /* libFLAC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFLAC.a; path = ../../../../usr/local/lib/libFLAC.a; sourceTree = "<group>"; };
+		40DE2F4B1B1B0CBC008585BF /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		40DE2F4C1B1B0CBC008585BF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		40DE2F4F1B1B0CD8008585BF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		40DE2F501B1B0CD8008585BF /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		40DE2F531B1B0CDF008585BF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		40DE2F551B1B0CE8008585BF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		40DE2F571B1B1AA1008585BF /* window.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
+		40DE2F581B1B1AA1008585BF /* window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window.h; sourceTree = "<group>"; };
+		40DE2F5A1B1B434A008585BF /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../usr/X11/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
+		40DE2F5C1B1B4825008585BF /* world.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = world.c; sourceTree = "<group>"; };
+		40DE2F5D1B1B4825008585BF /* world.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = world.h; sourceTree = "<group>"; };
+		40DE2F5F1B1B90AA008585BF /* player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = player.c; sourceTree = "<group>"; };
+		40DE2F601B1B90AA008585BF /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40DE2F1A1B1B0C2D008585BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DE2F541B1B0CDF008585BF /* IOKit.framework in Frameworks */,
+				40DE2F561B1B0CE8008585BF /* CoreFoundation.framework in Frameworks */,
+				40DE2F511B1B0CD8008585BF /* AppKit.framework in Frameworks */,
+				40DE2F521B1B0CD8008585BF /* ApplicationServices.framework in Frameworks */,
+				40DE2F4D1B1B0CBC008585BF /* OpenAL.framework in Frameworks */,
+				40DE2F4E1B1B0CBC008585BF /* OpenGL.framework in Frameworks */,
+				40DE2F5B1B1B434A008585BF /* libfreetype.6.dylib in Frameworks */,
+				40DE2F391B1B0C39008585BF /* liballegro_acodec-static.a in Frameworks */,
+				40DE2F3A1B1B0C39008585BF /* liballegro_audio-static.a in Frameworks */,
+				40DE2F3B1B1B0C39008585BF /* liballegro_color-static.a in Frameworks */,
+				40DE2F3C1B1B0C39008585BF /* liballegro_dialog-static.a in Frameworks */,
+				40DE2F3D1B1B0C39008585BF /* liballegro_font-static.a in Frameworks */,
+				40DE2F3E1B1B0C39008585BF /* liballegro_image-static.a in Frameworks */,
+				40DE2F3F1B1B0C39008585BF /* liballegro_main-static.a in Frameworks */,
+				40DE2F401B1B0C39008585BF /* liballegro_memfile-static.a in Frameworks */,
+				40DE2F411B1B0C39008585BF /* liballegro_physfs-static.a in Frameworks */,
+				40DE2F421B1B0C39008585BF /* liballegro_primitives-static.a in Frameworks */,
+				40DE2F431B1B0C39008585BF /* liballegro_ttf-static.a in Frameworks */,
+				40DE2F441B1B0C39008585BF /* liballegro-static.a in Frameworks */,
+				40DE2F451B1B0C39008585BF /* libdumb.a in Frameworks */,
+				40DE2F461B1B0C39008585BF /* libphysfs.a in Frameworks */,
+				40DE2F471B1B0C39008585BF /* libvorbis.a in Frameworks */,
+				40DE2F481B1B0C39008585BF /* libvorbisfile.a in Frameworks */,
+				40DE2F491B1B0C39008585BF /* libogg.a in Frameworks */,
+				40DE2F4A1B1B0C39008585BF /* libFLAC.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40DE2F141B1B0C2D008585BF = {
+			isa = PBXGroup;
+			children = (
+				40DE2F5A1B1B434A008585BF /* libfreetype.6.dylib */,
+				40DE2F551B1B0CE8008585BF /* CoreFoundation.framework */,
+				40DE2F531B1B0CDF008585BF /* IOKit.framework */,
+				40DE2F4F1B1B0CD8008585BF /* AppKit.framework */,
+				40DE2F501B1B0CD8008585BF /* ApplicationServices.framework */,
+				40DE2F4B1B1B0CBC008585BF /* OpenAL.framework */,
+				40DE2F4C1B1B0CBC008585BF /* OpenGL.framework */,
+				40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */,
+				40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */,
+				40DE2F291B1B0C39008585BF /* liballegro_color-static.a */,
+				40DE2F2A1B1B0C39008585BF /* liballegro_dialog-static.a */,
+				40DE2F2B1B1B0C39008585BF /* liballegro_font-static.a */,
+				40DE2F2C1B1B0C39008585BF /* liballegro_image-static.a */,
+				40DE2F2D1B1B0C39008585BF /* liballegro_main-static.a */,
+				40DE2F2E1B1B0C39008585BF /* liballegro_memfile-static.a */,
+				40DE2F2F1B1B0C39008585BF /* liballegro_physfs-static.a */,
+				40DE2F301B1B0C39008585BF /* liballegro_primitives-static.a */,
+				40DE2F311B1B0C39008585BF /* liballegro_ttf-static.a */,
+				40DE2F321B1B0C39008585BF /* liballegro-static.a */,
+				40DE2F331B1B0C39008585BF /* libdumb.a */,
+				40DE2F341B1B0C39008585BF /* libphysfs.a */,
+				40DE2F351B1B0C39008585BF /* libvorbis.a */,
+				40DE2F361B1B0C39008585BF /* libvorbisfile.a */,
+				40DE2F371B1B0C39008585BF /* libogg.a */,
+				40DE2F381B1B0C39008585BF /* libFLAC.a */,
+				40DE2F1F1B1B0C2D008585BF /* CGame */,
+				40DE2F1E1B1B0C2D008585BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40DE2F1E1B1B0C2D008585BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40DE2F1D1B1B0C2D008585BF /* CGame */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40DE2F1F1B1B0C2D008585BF /* CGame */ = {
+			isa = PBXGroup;
+			children = (
+				40DE2F201B1B0C2D008585BF /* main.c */,
+				40DE2F571B1B1AA1008585BF /* window.c */,
+				40DE2F581B1B1AA1008585BF /* window.h */,
+				40DE2F5C1B1B4825008585BF /* world.c */,
+				40DE2F5D1B1B4825008585BF /* world.h */,
+				40DE2F5F1B1B90AA008585BF /* player.c */,
+				40DE2F601B1B90AA008585BF /* player.h */,
+			);
+			path = CGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40DE2F1C1B1B0C2D008585BF /* CGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40DE2F241B1B0C2D008585BF /* Build configuration list for PBXNativeTarget "CGame" */;
+			buildPhases = (
+				40DE2F191B1B0C2D008585BF /* Sources */,
+				40DE2F1A1B1B0C2D008585BF /* Frameworks */,
+				40DE2F1B1B1B0C2D008585BF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CGame;
+			productName = CGame;
+			productReference = 40DE2F1D1B1B0C2D008585BF /* CGame */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40DE2F151B1B0C2D008585BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Tomasz Kasperek";
+				TargetAttributes = {
+					40DE2F1C1B1B0C2D008585BF = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 40DE2F181B1B0C2D008585BF /* Build configuration list for PBXProject "CGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40DE2F141B1B0C2D008585BF;
+			productRefGroup = 40DE2F1E1B1B0C2D008585BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40DE2F1C1B1B0C2D008585BF /* CGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40DE2F191B1B0C2D008585BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DE2F5E1B1B4825008585BF /* world.c in Sources */,
+				40DE2F211B1B0C2D008585BF /* main.c in Sources */,
+				40DE2F611B1B90AA008585BF /* player.c in Sources */,
+				40DE2F591B1B1AA1008585BF /* window.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40DE2F221B1B0C2D008585BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		40DE2F231B1B0C2D008585BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		40DE2F251B1B0C2D008585BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/X11/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40DE2F261B1B0C2D008585BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/X11/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40DE2F181B1B0C2D008585BF /* Build configuration list for PBXProject "CGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40DE2F221B1B0C2D008585BF /* Debug */,
+				40DE2F231B1B0C2D008585BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40DE2F241B1B0C2D008585BF /* Build configuration list for PBXNativeTarget "CGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40DE2F251B1B0C2D008585BF /* Debug */,
+				40DE2F261B1B0C2D008585BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40DE2F151B1B0C2D008585BF /* Project object */;
+}
