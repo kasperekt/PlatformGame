@@ -15,7 +15,7 @@ void add_crate(float x, float y)
   struct crate* tmp = malloc(sizeof(*tmp));
   tmp->x = x;
   tmp->y = y;
-  tmp->size = 20;
+  tmp->size = 60;
   tmp->next = NULL;
   
   if(!crates) {

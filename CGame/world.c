@@ -21,7 +21,6 @@ void init_world(const int width, const int height)
   
   init_player(20.0, world->floor, world->floor);
   add_crate(200.0, world->floor);
-  add_crate(300.0, world->floor + 50);
   add_crate(400.0, world->floor);
 }
 
