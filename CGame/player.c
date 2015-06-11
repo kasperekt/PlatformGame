@@ -29,13 +29,13 @@ void draw_player()
   if(player->jumping) {
     player->velocity_y += gravity;
     player->y += player->velocity_y;
-    if(player->y > player->floor_limit) {
+    if(player->y >= player->floor_limit) {
       player->jumping = 0;
       player->y = player->floor_limit;
     }
   }
   
-  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 4);
+  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 2);
 }
 
 void jump()

@@ -22,5 +22,8 @@ typedef struct collision_data {
 } CollisionData;
 
 CollisionType detect_collision();
+int collision_right(CollisionData c);
+int collision_left(CollisionData c);
+int collision_down(CollisionData c);
 
 #endif /* defined(__CGame__collision__) */

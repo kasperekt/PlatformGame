@@ -22,6 +22,13 @@ int collision_left(CollisionData c)
          c.player_x >= c.obstacle_right;
 }
 
+int collision_down(CollisionData c)
+{
+  return c.player_y >= c.obstacle_height &&
+         c.player_right > c.obstacle_x &&
+         c.player_x < c.obstacle_right;
+}
+
 CollisionType detect_collision()
 {
   CollisionType collision = NONE_COLLISION;
@@ -46,6 +53,11 @@ CollisionType detect_collision()
     
     if(collision_left(c)) {
       collision = BLOCKED_LEFT;
+      break;
+    }
+    
+    if(collision_down(c)) {
+      collision = BLOCKED_DOWN;
       break;
     }
     
