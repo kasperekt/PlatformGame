@@ -8,27 +8,44 @@
 
 #include "collision.h"
 
+int collision_right(CollisionData c)
+{
+  return c.player_right >= c.obstacle_x &&
+         c.player_y > c.obstacle_height &&
+         c.player_x < c.obstacle_right;
+}
+
+int collision_left(CollisionData c)
+{
+  return c.player_x <= c.obstacle_right &&
+         c.player_y > c.obstacle_height &&
+         c.player_x >= c.obstacle_right;
+}
+
 CollisionType detect_collision()
 {
   CollisionType collision = NONE_COLLISION;
   struct crate* it = crates;
   
+  CollisionData c;
+  c.player_right = player->x + player->size;
+  c.player_height = player->y - player->size;
+  c.player_x = player->x;
+  c.player_y = player->y;
+  
   while(it) {
-    int player_right = player->x + player->size;
+    c.obstacle_right = it->x + it->size;
+    c.obstacle_height = it->y - it->size;
+    c.obstacle_x = it->x;
+    c.obstacle_y = it->y;
     
-    int crate_right = it->x + it->size;
-    int crate_height = it->y - it->size;
-    
-    if(player_right >= it->x && player->y > crate_height && player->x < crate_right) {
+    if(collision_right(c)) {
       collision = BLOCKED_RIGHT;
       break;
     }
-    if(player->x <= crate_right && player->y > crate_height && player->x >= crate_right) {
+    
+    if(collision_left(c)) {
       collision = BLOCKED_LEFT;
-      break;
-    }
-    if(crate_height <= player->y) {
-      collision = BLOCKED_DOWN;
       break;
     }
     
