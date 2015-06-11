@@ -54,22 +54,23 @@ void move_player(bool *pressed, Collision collision)
   if(pressed[ALLEGRO_KEY_UP] && !player->jumping) jump();
   
   if(player->jumping) {
-    player->velocity_y += gravity;
-    player->y += player->velocity_y;
     
-    if(player->y >= player->floor_limit) {
-      player->jumping = 0;
-      player->y = player->floor_limit;
-    }
   }
   
-  if(!(player->position & ON_FLOOR) && (player->position & FALLING) && player->y < player->floor_limit)
-  {
+  if(!(player->position & ON_FLOOR) && (player->position & FALLING) && player->y < player->floor_limit) {
     player->velocity_y += gravity;
     player->y += player->velocity_y;
     
     if(player->y >= player->floor_limit) {
       player->position = ON_FLOOR;
+      player->y = player->floor_limit;
+    }
+  } else if(player->jumping) {
+    player->velocity_y += gravity;
+    player->y += player->velocity_y;
+    
+    if(player->y >= player->floor_limit) {
+      player->jumping = 0;
       player->y = player->floor_limit;
     }
   }
