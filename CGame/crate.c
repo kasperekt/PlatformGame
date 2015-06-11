@@ -21,7 +21,8 @@ void add_crate(float x, float y)
   if(!crates) {
     crates = tmp;
   } else {
-    crates->next = tmp;
+    tmp->next = crates;
+    crates = tmp;
   }
 }
 
