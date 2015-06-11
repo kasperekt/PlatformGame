@@ -13,6 +13,7 @@ CollisionResult collision_right(CollisionData c)
   CollisionResult result;
   result.has = c.player_right >= c.obstacle_x &&
                c.player_y > c.obstacle_height &&
+               c.player_height <= c.obstacle_y &&
                c.player_x < c.obstacle_right;
   
   return result;
@@ -23,6 +24,7 @@ CollisionResult collision_left(CollisionData c)
   CollisionResult result;
   result.has = c.player_x <= c.obstacle_right &&
                c.player_y > c.obstacle_height &&
+               c.player_height <= c.obstacle_y &&
                c.player_x >= c.obstacle_right;
   
   return result;
@@ -33,6 +35,7 @@ CollisionResult collision_down(CollisionData c)
   CollisionResult result;
   result.has = c.player_y >= c.obstacle_height &&
                c.player_right > c.obstacle_x &&
+               c.player_height <= c.obstacle_y &&
                c.player_x < c.obstacle_right;
   result.y = c.obstacle_height;
   
