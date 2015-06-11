@@ -14,6 +14,12 @@
 #include <allegro5/allegro_primitives.h>
 #include "collisiontype.h"
 
+typedef enum {
+  ON_FLOOR = (1 << 0),
+  FALLING = (1 << 1),
+  ON_PLATFORM = (1 << 2)
+} PlayerPosition;
+
 struct player {
   float x, y;
   float size;
@@ -21,6 +27,7 @@ struct player {
   float velocity_y;
   float floor_limit;
   int jumping;
+  PlayerPosition position;
 };
 
 extern struct player* player;
