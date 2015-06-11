@@ -64,21 +64,18 @@ Collision detect_collision()
     
     result = collision_down(c);
     if(result.has) {
-      collision.type = BLOCKED_DOWN;
+      collision.type |= BLOCKED_DOWN;
       collision.y = result.y;
-      break;
     }
     
     result = collision_right(c);
     if(result.has) {
-      collision.type = BLOCKED_RIGHT;
-      break;
+      collision.type |= BLOCKED_RIGHT;
     }
     
     result = collision_left(c);
     if(result.has) {
-      collision.type = BLOCKED_LEFT;
-      break;
+      collision.type |= BLOCKED_LEFT;
     }
     
     it = it->next;

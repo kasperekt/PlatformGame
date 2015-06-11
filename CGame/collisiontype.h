@@ -10,13 +10,13 @@
 #define CGame_collisiontype_h
 
 typedef enum {
-  KILL_ENEMY,
-  KILL_PLAYER,
-  BLOCKED_RIGHT,
-  BLOCKED_LEFT,
-  BLOCKED_DOWN,
-  BLOCKED_UP,
-  NONE_COLLISION
+  NONE_COLLISION = 0,
+  KILL_ENEMY = (1 << 0),
+  KILL_PLAYER = (1 << 1),
+  BLOCKED_RIGHT = (1 << 2),
+  BLOCKED_LEFT = (1 << 3),
+  BLOCKED_DOWN = (1 << 4),
+  BLOCKED_UP = (1 << 5)
 } CollisionType;
 
 typedef struct collision {

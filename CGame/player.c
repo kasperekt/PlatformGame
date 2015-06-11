@@ -48,12 +48,14 @@ void jump()
 
 void move_player(bool *pressed, Collision collision)
 {
-  if(collision.type == BLOCKED_DOWN) {
+  if(collision.type & BLOCKED_DOWN) {
     player->jumping = 0;
     player->y = collision.y;
   }
-  if(pressed[ALLEGRO_KEY_RIGHT] && collision.type != BLOCKED_RIGHT) player->x += player->speed;
-  else if(pressed[ALLEGRO_KEY_LEFT] && collision.type != BLOCKED_LEFT) player->x -= player->speed;
+  if(pressed[ALLEGRO_KEY_RIGHT] && !(collision.type & BLOCKED_RIGHT)) {
+    player->x += player->speed;
+  }
+  else if(pressed[ALLEGRO_KEY_LEFT] && !(collision.type & BLOCKED_LEFT)) player->x -= player->speed;
 
   if(pressed[ALLEGRO_KEY_UP] && !player->jumping) jump();
 }
