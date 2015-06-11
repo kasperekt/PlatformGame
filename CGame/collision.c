@@ -8,30 +8,44 @@
 
 #include "collision.h"
 
-int collision_right(CollisionData c)
+CollisionResult collision_right(CollisionData c)
 {
-  return c.player_right >= c.obstacle_x &&
-         c.player_y > c.obstacle_height &&
-         c.player_x < c.obstacle_right;
+  CollisionResult result;
+  result.has = c.player_right >= c.obstacle_x &&
+               c.player_y > c.obstacle_height &&
+               c.player_x < c.obstacle_right;
+  
+  return result;
 }
 
-int collision_left(CollisionData c)
+CollisionResult collision_left(CollisionData c)
 {
-  return c.player_x <= c.obstacle_right &&
-         c.player_y > c.obstacle_height &&
-         c.player_x >= c.obstacle_right;
+  CollisionResult result;
+  result.has = c.player_x <= c.obstacle_right &&
+               c.player_y > c.obstacle_height &&
+               c.player_x >= c.obstacle_right;
+  
+  return result;
 }
 
-int collision_down(CollisionData c)
+CollisionResult collision_down(CollisionData c)
 {
-  return c.player_y >= c.obstacle_height &&
-         c.player_right > c.obstacle_x &&
-         c.player_x < c.obstacle_right;
+  CollisionResult result;
+  result.has = c.player_y >= c.obstacle_height &&
+               c.player_right > c.obstacle_x &&
+               c.player_x < c.obstacle_right;
+  result.y = c.obstacle_height;
+  
+  return result;
 }
 
-CollisionType detect_collision()
+Collision detect_collision()
 {
-  CollisionType collision = NONE_COLLISION;
+  Collision collision;
+  collision.type = NONE_COLLISION;
+  collision.x = 0;
+  collision.y = 0;
+  
   struct crate* it = crates;
   
   CollisionData c;
@@ -40,24 +54,30 @@ CollisionType detect_collision()
   c.player_x = player->x;
   c.player_y = player->y;
   
+  CollisionResult result;
+  
   while(it) {
     c.obstacle_right = it->x + it->size;
     c.obstacle_height = it->y - it->size;
     c.obstacle_x = it->x;
     c.obstacle_y = it->y;
     
-    if(collision_right(c)) {
-      collision = BLOCKED_RIGHT;
+    result = collision_down(c);
+    if(result.has) {
+      collision.type = BLOCKED_DOWN;
+      collision.y = result.y;
       break;
     }
     
-    if(collision_left(c)) {
-      collision = BLOCKED_LEFT;
+    result = collision_right(c);
+    if(result.has) {
+      collision.type = BLOCKED_RIGHT;
       break;
     }
     
-    if(collision_down(c)) {
-      collision = BLOCKED_DOWN;
+    result = collision_left(c);
+    if(result.has) {
+      collision.type = BLOCKED_LEFT;
       break;
     }
     

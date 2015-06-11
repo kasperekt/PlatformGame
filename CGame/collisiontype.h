@@ -19,4 +19,9 @@ typedef enum {
   NONE_COLLISION
 } CollisionType;
 
+typedef struct collision {
+  int x, y;
+  CollisionType type;
+} Collision;
+
 #endif

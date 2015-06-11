@@ -26,9 +26,9 @@ struct player {
 extern struct player* player;
 
 void init_player(float x, float y, float floor_limit);
-void move_player(bool *pressed, CollisionType collision);
+void move_player(bool *pressed, Collision collision);
 void destroy_player();
-void draw_player();
+void draw_player(bool *pressed, Collision collision);
 void jump();
 
 #endif /* defined(__CGame__player__) */

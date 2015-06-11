@@ -21,9 +21,14 @@ typedef struct collision_data {
   int obstacle_x, obstacle_y;
 } CollisionData;
 
-CollisionType detect_collision();
-int collision_right(CollisionData c);
-int collision_left(CollisionData c);
-int collision_down(CollisionData c);
+typedef struct collision_result {
+  int has;
+  int x, y;
+} CollisionResult;
+
+Collision detect_collision();
+CollisionResult collision_right(CollisionData c);
+CollisionResult collision_left(CollisionData c);
+CollisionResult collision_down(CollisionData c);
 
 #endif /* defined(__CGame__collision__) */

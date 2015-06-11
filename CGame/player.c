@@ -22,9 +22,11 @@ void init_player(float x, float y, float floor_limit)
   player->jumping = 0;
 }
 
-void draw_player()
+void draw_player(bool *pressed, Collision collision)
 {
   const float gravity = 0.5;
+  
+  move_player(pressed, collision);
   
   if(player->jumping) {
     player->velocity_y += gravity;
@@ -44,10 +46,14 @@ void jump()
   player->velocity_y = -9.0;
 }
 
-void move_player(bool *pressed, CollisionType collision)
+void move_player(bool *pressed, Collision collision)
 {
-  if(pressed[ALLEGRO_KEY_RIGHT] && collision != BLOCKED_RIGHT) player->x += player->speed;
-  else if(pressed[ALLEGRO_KEY_LEFT] && collision != BLOCKED_LEFT) player->x -= player->speed;
+  if(collision.type == BLOCKED_DOWN) {
+    player->jumping = 0;
+    player->y = collision.y;
+  }
+  if(pressed[ALLEGRO_KEY_RIGHT] && collision.type != BLOCKED_RIGHT) player->x += player->speed;
+  else if(pressed[ALLEGRO_KEY_LEFT] && collision.type != BLOCKED_LEFT) player->x -= player->speed;
 
   if(pressed[ALLEGRO_KEY_UP] && !player->jumping) jump();
 }
