@@ -28,7 +28,7 @@ void draw_player(bool *pressed, Collision collision)
 {
   move_player(pressed, collision);
   
-  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 2);
+  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 0);
 }
 
 void jump()
@@ -40,7 +40,6 @@ void jump()
 void move_player(bool *pressed, Collision collision)
 {
   if(collision.type & BLOCKED_DOWN) {
-    printf("DOWN");
     player->jumping = 0;
     player->position = ON_PLATFORM;
     player->y = collision.y;

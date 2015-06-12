@@ -30,7 +30,7 @@ void draw_crates()
 {
   struct crate* it = crates;
   while(it) {
-    al_draw_rectangle(it->x, it->y - it->size, it->x + it->size, it->y, al_map_rgb(0, 0, 255), 4);
+    al_draw_rectangle(it->x, it->y - it->size, it->x + it->size, it->y, al_map_rgb(0, 0, 255), 0);
     it = it->next;
   }
 }
