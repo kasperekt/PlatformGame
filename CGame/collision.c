@@ -36,8 +36,21 @@ CollisionResult collision_down(CollisionData c)
   result.has = c.player_y >= c.obstacle_height &&
                c.player_right > c.obstacle_x &&
                c.player_height <= c.obstacle_y &&
+               c.player_y < c.obstacle_y &&
                c.player_x < c.obstacle_right;
   result.y = c.obstacle_height;
+  
+  return result;
+}
+
+CollisionResult collision_up(CollisionData c)
+{
+  CollisionResult result;
+  result.has = c.player_right > c.obstacle_x &&
+               c.player_y > c.obstacle_height &&
+               c.player_height <= c.obstacle_y &&
+               c.player_height > c.obstacle_height &&
+               c.player_x < c.obstacle_right;
   
   return result;
 }
@@ -79,6 +92,11 @@ Collision detect_collision()
     result = collision_left(c);
     if(result.has) {
       collision.type |= BLOCKED_LEFT;
+    }
+    
+    result = collision_up(c);
+    if(result.has) {
+      collision.type |= BLOCKED_UP;
     }
     
     it = it->next;

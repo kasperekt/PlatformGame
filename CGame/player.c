@@ -9,6 +9,7 @@
 #include "player.h"
 
 struct player* player = NULL;
+const float gravity = 0.5;
 
 void init_player(float x, float y, float floor_limit)
 {
@@ -38,9 +39,8 @@ void jump()
 
 void move_player(bool *pressed, Collision collision)
 {
-  const float gravity = 0.5;
-  
   if(collision.type & BLOCKED_DOWN) {
+    printf("DOWN");
     player->jumping = 0;
     player->position = ON_PLATFORM;
     player->y = collision.y;
@@ -48,16 +48,17 @@ void move_player(bool *pressed, Collision collision)
     player->position |= FALLING;
   }
   
+  if(collision.type & BLOCKED_UP) {
+    player->velocity_y = 0;
+  }
+  
   if(pressed[ALLEGRO_KEY_RIGHT] && !(collision.type & BLOCKED_RIGHT)) player->x += player->speed;
   else if(pressed[ALLEGRO_KEY_LEFT] && !(collision.type & BLOCKED_LEFT)) player->x -= player->speed;
 
   if(pressed[ALLEGRO_KEY_UP] && !player->jumping) jump();
+
   
-  if(player->jumping) {
-    
-  }
-  
-  if(!(player->position & ON_FLOOR) && (player->position & FALLING) && player->y < player->floor_limit) {
+  if(!(player->position & ON_FLOOR) && (player->position & FALLING) && player->y < player->floor_limit && !player->jumping) {
     player->velocity_y += gravity;
     player->y += player->velocity_y;
     

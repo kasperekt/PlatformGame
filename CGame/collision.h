@@ -30,5 +30,6 @@ Collision detect_collision();
 CollisionResult collision_right(CollisionData c);
 CollisionResult collision_left(CollisionData c);
 CollisionResult collision_down(CollisionData c);
+CollisionResult collision_up(CollisionData c);
 
 #endif /* defined(__CGame__collision__) */
