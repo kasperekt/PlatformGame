@@ -25,7 +25,7 @@ struct world {
 
 void init_world(const int width, const int height);
 void draw_floor();
-void draw_world(bool *pressed);
+void draw_world(int *pressed);
 void destroy_world();
 
 #endif /* defined(__CGame__world__) */

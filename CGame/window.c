@@ -8,7 +8,7 @@
 
 #include "window.h"
 
-bool done = false;
+int done = 0;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_TIMER *timer = NULL;
@@ -17,7 +17,7 @@ ALLEGRO_FONT *main_font = NULL;
 const int screen_width = 800;
 const int screen_height = 600;
 
-bool pressed_keys[ALLEGRO_KEY_MAX] = { false };
+int pressed_keys[ALLEGRO_KEY_MAX] = { 0 };
 
 void abort_game(const char* message)
 {
@@ -79,7 +79,7 @@ void draw()
 
 void game_loop()
 {
-  bool redraw = true;
+  bool redraw = 1;
   al_start_timer(timer);
   init_world(screen_width, screen_height);
   
@@ -88,12 +88,12 @@ void game_loop()
     al_wait_for_event(event_queue, &event);
     
     if(event.type == ALLEGRO_EVENT_TIMER) {
-      redraw = true;
+      redraw = 1;
     } else if(event.type == ALLEGRO_EVENT_KEY_DOWN) {
-      if(event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) done = true;
-      else pressed_keys[event.keyboard.keycode] = true;
+      if(event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) done = 1;
+      else pressed_keys[event.keyboard.keycode] = 1;
     } else if(event.type == ALLEGRO_EVENT_KEY_UP) {
-      pressed_keys[event.keyboard.keycode] = false;
+      pressed_keys[event.keyboard.keycode] = 0;
     }
     
     if(redraw && al_is_event_queue_empty(event_queue)) {

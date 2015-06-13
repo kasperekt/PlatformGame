@@ -18,7 +18,7 @@
 #include <OpenGL/gl.h>
 #include "world.h"
 
-extern bool done;
+extern int done;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_TIMER *timer;

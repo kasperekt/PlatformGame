@@ -46,7 +46,7 @@ void init_player(float x, float y, float floor_limit)
   player->direction = RIGHT;
 }
 
-void draw_player(bool *pressed, Collision collision)
+void draw_player(int *pressed, Collision collision)
 {
   move_player(pressed, collision);
   
@@ -56,10 +56,10 @@ void draw_player(bool *pressed, Collision collision)
 void jump()
 {
   player->jumping = 1;
-  player->velocity_y = -9.0;
+  player->velocity_y = -10.0;
 }
 
-void move_player(bool *pressed, Collision collision)
+void move_player(int *pressed, Collision collision)
 {
   player->active = 0;
   if(collision.type & BLOCKED_DOWN) {

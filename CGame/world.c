@@ -46,7 +46,7 @@ void draw_floor()
   al_hold_bitmap_drawing(0);
 }
 
-void draw_world(bool *pressed)
+void draw_world(int *pressed)
 {
   draw_floor();
   Collision collision = detect_collision();
