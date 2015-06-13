@@ -55,14 +55,9 @@ CollisionResult collision_up(CollisionData c)
   return result;
 }
 
-Collision detect_collision()
+Collisions detect_collisions()
 {
-  Collision collision;
-  collision.type = NONE_COLLISION;
-  collision.x = 0;
-  collision.y = 0;
-  
-  struct crate* it = crates;
+  Collisions result;
   
   CollisionData c;
   c.player_right = player->x + player->width;
@@ -70,10 +65,75 @@ Collision detect_collision()
   c.player_x = player->x;
   c.player_y = player->y;
   
+  result.world = detect_world_collision(c);
+  result.gem = detect_gem_collision(c);
+  
+  return result;
+}
+
+GemCollision detect_gem_collision(CollisionData c)
+{
+  Gems *it = gems;
+  
+  GemCollision collision;
+  collision.gem_id = 0;
+  collision.points = 0;
+  
   CollisionResult result;
   
   while(it) {
-    c.obstacle_right = it->x + it->size;
+    c.obstacle_right = it->x + it->width;
+    c.obstacle_height = it->y - it->height;
+    c.obstacle_x = it->x;
+    c.obstacle_y = it->y;
+    
+    result = collision_down(c);
+    if(result.has) {
+      collision.gem_id = it->gem_id;
+      collision.points = it->points;
+      break;
+    }
+    
+    result = collision_up(c);
+    if(result.has) {
+      collision.gem_id = it->gem_id;
+      collision.points = it->points;
+      break;
+    }
+    
+    result = collision_left(c);
+    if(result.has) {
+      collision.gem_id = it->gem_id;
+      collision.points = it->points;
+      break;
+    }
+    
+    result = collision_right(c);
+    if(result.has) {
+      collision.gem_id = it->gem_id;
+      collision.points = it->points;
+      break;
+    }
+    
+    it = it->next;
+  }
+  
+  return collision;
+}
+
+Collision detect_world_collision(CollisionData c)
+{
+  struct crate* it = crates;
+  
+  Collision collision;
+  collision.type = NONE_COLLISION;
+  collision.x = 0;
+  collision.y = 0;
+  
+  CollisionResult result;
+  
+  while(it) {
+    c.obstacle_right = it->x + it->width;
     c.obstacle_height = it->y - it->height;
     c.obstacle_x = it->x;
     c.obstacle_y = it->y;

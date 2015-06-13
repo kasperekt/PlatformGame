@@ -46,9 +46,9 @@ void init_player(float x, float y, float floor_limit)
   player->direction = RIGHT;
 }
 
-void draw_player(int *pressed, Collision collision)
+void draw_player(int *pressed, Collisions collisions)
 {
-  move_player(pressed, collision);
+  move_player(pressed, collisions);
   
   al_draw_bitmap_region(player->image, animation[current][0], animation[current][1], player->width, player->height, player->x, player->y - player->height, player->direction);
 }
@@ -59,27 +59,28 @@ void jump()
   player->velocity_y = -10.0;
 }
 
-void move_player(int *pressed, Collision collision)
+void move_player(int *pressed, Collisions collisions)
 {
   player->active = 0;
-  if(collision.type & BLOCKED_DOWN) {
+  
+  if(collisions.world.type & BLOCKED_DOWN) {
     player->jumping = 0;
     player->position = ON_PLATFORM;
-    player->y = collision.y;
+    player->y = collisions.world.y;
   } else {
     player->position |= FALLING;
   }
   
-  if(collision.type & BLOCKED_UP) {
+  if(collisions.world.type & BLOCKED_UP) {
     player->velocity_y = 0;
   }
   
-  if(pressed[ALLEGRO_KEY_RIGHT] && !(collision.type & BLOCKED_RIGHT)) {
+  if(pressed[ALLEGRO_KEY_RIGHT] && !(collisions.world.type & BLOCKED_RIGHT)) {
     player->direction = RIGHT;
     player->active = 1;
     player->x += player->speed;
   }
-  else if(pressed[ALLEGRO_KEY_LEFT] && !(collision.type & BLOCKED_LEFT)) {
+  else if(pressed[ALLEGRO_KEY_LEFT] && !(collisions.world.type & BLOCKED_LEFT)) {
     player->direction = LEFT;
     player->active = 1;
     player->x -= player->speed;
@@ -104,6 +105,11 @@ void move_player(int *pressed, Collision collision)
       player->jumping = 0;
       player->y = player->floor_limit;
     }
+  }
+  
+  if(collisions.gem.gem_id) {
+    printf("gEM!");
+    remove_gem(collisions.gem.gem_id);
   }
   
   if(player->active) {

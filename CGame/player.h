@@ -14,6 +14,7 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 #include "collisiontype.h"
+#include "gem.h"
 
 typedef enum {
   LEFT = ALLEGRO_FLIP_HORIZONTAL,
@@ -42,9 +43,9 @@ struct player {
 extern struct player* player;
 
 void init_player(float x, float y, float floor_limit);
-void move_player(int *pressed, Collision collision);
+void move_player(int *pressed, Collisions collisions);
 void destroy_player();
-void draw_player(int *pressed, Collision collision);
+void draw_player(int *pressed, Collisions collisions);
 void jump();
 
 #endif /* defined(__CGame__player__) */

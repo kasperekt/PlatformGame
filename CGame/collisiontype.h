@@ -24,4 +24,14 @@ typedef struct collision {
   CollisionType type;
 } Collision;
 
+typedef struct {
+  int gem_id;
+  int points;
+} GemCollision;
+
+typedef struct {
+  GemCollision gem;
+  Collision world;
+} Collisions;
+
 #endif

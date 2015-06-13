@@ -13,6 +13,7 @@
 #include "collisiontype.h"
 #include "player.h"
 #include "crate.h"
+#include "gem.h"
 
 typedef struct collision_data {
   int player_height, player_right;
@@ -26,7 +27,9 @@ typedef struct collision_result {
   int x, y;
 } CollisionResult;
 
-Collision detect_collision();
+Collision detect_world_collision();
+GemCollision detect_gem_collision();
+Collisions detect_collisions();
 CollisionResult collision_right(CollisionData c);
 CollisionResult collision_left(CollisionData c);
 CollisionResult collision_down(CollisionData c);

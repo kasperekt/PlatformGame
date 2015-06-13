@@ -28,6 +28,7 @@ void init_world(const int width, const int height)
   add_crate(400.0, world->floor);
   add_crate(600.0, world->floor);
   add_gem(400, 400, 200);
+  add_gem(500, 300, 100);
 }
 
 void draw_floor()
@@ -66,9 +67,9 @@ void draw_world(int *pressed)
 {
   draw_floor();
   draw_grass();
-  Collision collision = detect_collision();
+  Collisions collisions = detect_collisions();
   
-  draw_player(pressed, collision);
+  draw_player(pressed, collisions);
   draw_crates();
   draw_gems();
 }

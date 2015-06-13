@@ -43,7 +43,7 @@ void remove_gem(int id)
   
   if(tmp->gem_id == id) {
     to_delete = tmp;
-    tmp = tmp->next;
+    gems = tmp->next;
     al_destroy_bitmap(to_delete->image);
     free(to_delete);
   } else {
