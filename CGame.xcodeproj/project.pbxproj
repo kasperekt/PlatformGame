@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406DE9CE1B2C39A800914B78 /* robot.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9CB1B2C2FC700914B78 /* robot.png */; };
 		40DE2F211B1B0C2D008585BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F201B1B0C2D008585BF /* main.c */; };
 		40DE2F391B1B0C39008585BF /* liballegro_acodec-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */; };
 		40DE2F3A1B1B0C39008585BF /* liballegro_audio-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */; };
@@ -43,16 +44,18 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		40DE2F1B1B1B0C2D008585BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = images;
+			dstSubfolderSpec = 16;
 			files = (
+				406DE9CE1B2C39A800914B78 /* robot.png in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		406DE9CB1B2C2FC700914B78 /* robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robot.png; sourceTree = "<group>"; };
 		40DE2F1D1B1B0C2D008585BF /* CGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DE2F201B1B0C2D008585BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_acodec-static.a"; path = "../../../../usr/local/lib/liballegro_acodec-static.a"; sourceTree = "<group>"; };
@@ -129,9 +132,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		406DE9CD1B2C399400914B78 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				406DE9CB1B2C2FC700914B78 /* robot.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		40DE2F141B1B0C2D008585BF = {
 			isa = PBXGroup;
 			children = (
+				406DE9CD1B2C399400914B78 /* images */,
 				40DE2F5A1B1B434A008585BF /* libfreetype.6.dylib */,
 				40DE2F551B1B0CE8008585BF /* CoreFoundation.framework */,
 				40DE2F531B1B0CDF008585BF /* IOKit.framework */,

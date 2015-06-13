@@ -22,12 +22,14 @@ void init_player(float x, float y, float floor_limit)
   player->velocity_y = 0.0;
   player->jumping = 0;
   player->position |= ON_FLOOR;
+  player->image = al_load_bitmap("images/robot.png");
 }
 
 void draw_player(bool *pressed, Collision collision)
 {
   move_player(pressed, collision);
   
+  al_draw_bitmap(player->image, 300, 200, ALLEGRO_FLIP_HORIZONTAL);
   al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 0);
 }
 
@@ -78,5 +80,6 @@ void move_player(bool *pressed, Collision collision)
 
 void destroy_player()
 {
+  al_destroy_bitmap(player->image);
   free(player);
 }

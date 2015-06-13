@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_image.h>
 #include "collisiontype.h"
 
 typedef enum {
@@ -28,6 +29,7 @@ struct player {
   float floor_limit;
   int jumping;
   PlayerPosition position;
+  ALLEGRO_BITMAP *image;
 };
 
 extern struct player* player;

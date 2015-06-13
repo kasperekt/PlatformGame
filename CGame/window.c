@@ -47,8 +47,10 @@ void init(const int fps)
     abort_game("Failed to create event queue");
   }
   
+  // Addons
   al_init_font_addon();
   al_init_ttf_addon();
+  al_init_image_addon();
   
   main_font = al_load_font("/Library/Fonts/PTSans.ttc", 36, 0);
 
