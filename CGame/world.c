@@ -28,11 +28,64 @@ void init_world(const int width, const int height)
   world->floor = world->ground - al_get_bitmap_height(world->grass);
   
   init_player(20.0, world->floor, world->floor);
-  add_crate(200.0, world->floor);
-  add_crate(400.0, world->floor);
-  add_crate(600.0, world->floor);
-  add_gem(400, 400, 200);
-  add_gem(500, 300, 100);
+  load_map("/Users/tomek/University/CGame/map.txt");
+}
+
+void add_element(char *data)
+{
+  int type;
+  char* str = strtok(data, "=,");
+  sscanf(str, "%d", &type);
+  
+  switch(type) {
+    case 1: {
+      float x, y;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%f", &x);
+      if(*y_str == 'x') y = world->floor;
+      
+      add_crate(x, y);
+      break;
+    }
+    case 2: {
+      int x, y, points;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      char *points_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%d", &x);
+      sscanf(y_str, "%d", &y);
+      sscanf(points_str, "%d", &points);
+      
+      add_gem(x, y, points);
+      break;
+    }
+    default:
+      printf("None\n");
+  }
+}
+
+void load_map(const char* filename)
+{
+  FILE *fp = fopen(filename, "r");
+  
+  if(!fp) {
+    fprintf(stderr, "Blad przy otwieraniu pliku: %s\n", strerror(errno));
+    return;
+  }
+  
+  size_t len = 0;
+  ssize_t read;
+  char *line = NULL;
+  
+  while((read = getline(&line, &len, fp)) != -1) {
+    add_element(line);
+  }
+
+  fclose(fp);
+  if(line) free(line);
 }
 
 float camera_update(float x, int width)
