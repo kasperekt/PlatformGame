@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		406DE9D01B2C517D00914B78 /* player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9CF1B2C516200914B78 /* player.png */; };
+		406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D11B2C5C4E00914B78 /* sand_center.png */; };
 		40DE2F211B1B0C2D008585BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F201B1B0C2D008585BF /* main.c */; };
 		40DE2F391B1B0C39008585BF /* liballegro_acodec-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */; };
 		40DE2F3A1B1B0C39008585BF /* liballegro_audio-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */; };
@@ -49,6 +50,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				406DE9D01B2C517D00914B78 /* player.png in CopyFiles */,
+				406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		406DE9CF1B2C516200914B78 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		406DE9D11B2C5C4E00914B78 /* sand_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand_center.png; sourceTree = "<group>"; };
 		40DE2F1D1B1B0C2D008585BF /* CGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DE2F201B1B0C2D008585BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_acodec-static.a"; path = "../../../../usr/local/lib/liballegro_acodec-static.a"; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		406DE9CD1B2C399400914B78 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				406DE9D11B2C5C4E00914B78 /* sand_center.png */,
 				406DE9CF1B2C516200914B78 /* player.png */,
 			);
 			name = images;

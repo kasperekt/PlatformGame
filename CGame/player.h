@@ -28,7 +28,6 @@ typedef enum {
 
 struct player {
   float x, y;
-  float size;
   float speed;
   float velocity_y;
   float floor_limit;

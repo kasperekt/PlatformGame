@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_image.h>
 #include "player.h"
 #include "crate.h"
 #include "collision.h"
@@ -19,9 +20,11 @@
 struct world {
   float floor;
   int width, height;
+  ALLEGRO_BITMAP *image;
 };
 
 void init_world(const int width, const int height);
+void draw_floor();
 void draw_world(bool *pressed);
 void destroy_world();
 

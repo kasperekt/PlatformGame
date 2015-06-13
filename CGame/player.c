@@ -33,7 +33,6 @@ void init_player(float x, float y, float floor_limit)
   player = malloc(sizeof(*player));
   player->x = x;
   player->y = y;
-  player->size = 20;
   player->speed = 2;
   player->floor_limit = floor_limit;
   player->velocity_y = 0.0;
