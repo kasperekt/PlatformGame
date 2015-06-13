@@ -47,5 +47,6 @@ void move_player(int *pressed, Collisions collisions);
 void destroy_player();
 void draw_player(int *pressed, Collisions collisions);
 void jump();
+void animate();
 
 #endif /* defined(__CGame__player__) */

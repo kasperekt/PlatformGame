@@ -27,6 +27,6 @@ extern Gems *gems;
 void add_gem(int x, int y, int points);
 void remove_gem(int gem_id);
 void destroy_gems();
-void draw_gems();
+void draw_gems(Gems *gem);
 
 #endif /* defined(__CGame__gem__) */

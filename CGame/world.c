@@ -70,8 +70,8 @@ void draw_world(int *pressed)
   Collisions collisions = detect_collisions();
   
   draw_player(pressed, collisions);
-  draw_crates();
-  draw_gems();
+  draw_crates(crates);
+  draw_gems(gems);
 }
 
 void destroy_world()

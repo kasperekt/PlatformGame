@@ -62,12 +62,10 @@ void remove_gem(int id)
   }
 }
 
-void draw_gems()
-{
-  Gems* tmp = gems;
-  while(tmp) {
-    al_draw_bitmap(tmp->image, tmp->x, tmp->y - tmp->height, 0);
-    tmp = tmp->next;
+void draw_gems(Gems *gem) {
+  if(gem) {
+    al_draw_bitmap(gem->image, gem->x, gem->y - gem->height, 0);
+    draw_gems(gem->next);
   }
 }
 

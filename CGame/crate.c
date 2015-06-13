@@ -29,12 +29,11 @@ void add_crate(float x, float y)
   }
 }
 
-void draw_crates()
+void draw_crates(struct crate* c)
 {
-  struct crate* it = crates;
-  while(it) {
-    al_draw_bitmap(it->image, it->x, it->y - it->height, 0);
-    it = it->next;
+  if(c) {
+    al_draw_bitmap(c->image, c->x, c->y - c->height, 0);
+    draw_crates(c->next);
   }
 }
 

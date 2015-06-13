@@ -27,6 +27,6 @@ extern struct crate* crates;
 
 void add_crate(float x, float y);
 void destroy_crates();
-void draw_crates();
+void draw_crates(struct crate *c);
 
 #endif /* defined(__CGame__crate__) */

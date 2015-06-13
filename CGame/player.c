@@ -12,7 +12,7 @@ struct player* player = NULL;
 const float gravity = 0.5;
 
 int current = 0;
-int a = 0;
+int animation_control = 0;
 const int animation_steps = 11;
 const float animation[animation_steps][2] = {
   {0, 0},
@@ -49,6 +49,7 @@ void init_player(float x, float y, float floor_limit)
 void draw_player(int *pressed, Collisions collisions)
 {
   move_player(pressed, collisions);
+  animate();
   
   al_draw_bitmap_region(player->image, animation[current][0], animation[current][1], player->width, player->height, player->x, player->y - player->height, player->direction);
 }
@@ -108,16 +109,18 @@ void move_player(int *pressed, Collisions collisions)
   }
   
   if(collisions.gem.gem_id) {
-    printf("gEM!");
     remove_gem(collisions.gem.gem_id);
   }
-  
+}
+
+void animate()
+{
   if(player->active) {
-    a++;
+    animation_control++;
     
-    if(a == 2) {
+    if(animation_control == 2) {
       current = (current + 1) % 11;
-      a = 0;
+      animation_control = 0;
     }
   } else {
     current = 7;
