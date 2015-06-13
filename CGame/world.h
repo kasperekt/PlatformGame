@@ -24,6 +24,7 @@
 struct world {
   float floor, ground;
   int width, height;
+  int map_width, map_height;
   ALLEGRO_BITMAP *image;
   ALLEGRO_BITMAP *grass;
 };

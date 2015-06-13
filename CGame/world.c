@@ -20,6 +20,8 @@ void init_world(const int width, const int height)
   world = malloc(sizeof(*world));
   world->width = width;
   world->height = height;
+  world->map_height = world->height;
+  world->map_width = 2000;
   world->ground = height - 50;
   world->image = al_load_bitmap("images/sand_center.png");
   world->grass = al_load_bitmap("images/grass.png");
@@ -40,6 +42,10 @@ float camera_update(float x, int width)
   float position = -(world->width / 2) + (x + (width / 2));
   if(position < 0) position = 0;
   
+  if(position >= (world->map_width - (world->width))) {
+    position = world->map_width - (world->width);
+  }
+  
   return position;
 }
 
@@ -48,7 +54,7 @@ void draw_floor()
   int image_width = al_get_bitmap_width(world->image);
   int image_height = al_get_bitmap_height(world->image);
   
-  int x = world->width / image_width;
+  int x = world->map_width / image_width;
   int y = world->height - world->ground;
   
   al_hold_bitmap_drawing(1);
@@ -65,7 +71,7 @@ void draw_floor()
 void draw_grass()
 {
   int image_width = al_get_bitmap_width(world->grass);
-  int x = world->width / image_width;
+  int x = world->map_width / image_width;
   
   al_hold_bitmap_drawing(1);
   for(int i = 0; i < x + 1; i++) {
