@@ -13,10 +13,13 @@
 #include <stdlib.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_image.h>
 
 struct crate {
   float x, y;
   float size;
+  int height, width;
+  ALLEGRO_BITMAP *image;
   struct crate *next;
 };
 

@@ -16,6 +16,9 @@ void add_crate(float x, float y)
   tmp->x = x;
   tmp->y = y;
   tmp->size = 60;
+  tmp->image = al_load_bitmap("images/box.png");
+  tmp->width = al_get_bitmap_width(tmp->image);
+  tmp->height = al_get_bitmap_height(tmp->image);
   tmp->next = NULL;
   
   if(!crates) {
@@ -30,7 +33,7 @@ void draw_crates()
 {
   struct crate* it = crates;
   while(it) {
-    al_draw_rectangle(it->x, it->y - it->size, it->x + it->size, it->y, al_map_rgb(0, 0, 255), 0);
+    al_draw_bitmap(it->image, it->x, it->y - it->height, 0);
     it = it->next;
   }
 }
@@ -41,6 +44,7 @@ void destroy_crates()
   
   while(tmp) {
     crates = tmp->next;
+    al_destroy_bitmap(tmp->image);
     free(tmp);
     tmp = crates;
   }

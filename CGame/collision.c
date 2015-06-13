@@ -74,7 +74,7 @@ Collision detect_collision()
   
   while(it) {
     c.obstacle_right = it->x + it->size;
-    c.obstacle_height = it->y - it->size;
+    c.obstacle_height = it->y - it->height;
     c.obstacle_x = it->x;
     c.obstacle_y = it->y;
     
