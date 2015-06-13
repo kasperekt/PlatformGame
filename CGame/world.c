@@ -29,10 +29,8 @@ void init_world(const int width, const int height)
   
   init_player(20.0, world->floor, world->floor);
   add_crate(200.0, world->floor);
-  add_crate(250.0, world->floor - 70);
   add_crate(400.0, world->floor);
   add_crate(600.0, world->floor);
-  add_crate(250.0, world->floor - 300);
   add_gem(400, 400, 200);
   add_gem(500, 300, 100);
 }
@@ -85,12 +83,9 @@ void draw_points()
 {
   char *points;
   sprintf(points, "%d", player->points);
-
-  float val = (float) world->width;
-  float *x = &val;
-  al_transform_coordinates(&camera, x, 0);
+  int x = (int) camera_update(player->x, player->width);
   
-  al_draw_text(font, al_map_rgb(0, 0, 0), val, 10, 0, points);
+  al_draw_text(font, al_map_rgb(0, 0, 0), 20 + x, 10, 0, points);
 }
 
 void draw_world(int *pressed)
@@ -100,7 +95,7 @@ void draw_world(int *pressed)
   Collisions collisions = detect_collisions(world->map_width);
   
   draw_player(pressed, collisions);
-//  draw_points();
+  draw_points();
   draw_crates(crates);
   draw_gems(gems);
 
