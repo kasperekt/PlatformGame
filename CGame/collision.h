@@ -27,9 +27,9 @@ typedef struct collision_result {
   int x, y;
 } CollisionResult;
 
-Collision detect_world_collision();
-GemCollision detect_gem_collision();
-Collisions detect_collisions();
+Collision detect_world_collision(CollisionData c, int map_width);
+GemCollision detect_gem_collision(CollisionData c);
+Collisions detect_collisions(int map_width);
 CollisionResult collision_right(CollisionData c);
 CollisionResult collision_left(CollisionData c);
 CollisionResult collision_down(CollisionData c);

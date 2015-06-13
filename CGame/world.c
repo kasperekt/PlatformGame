@@ -21,7 +21,7 @@ void init_world(const int width, const int height)
   world->width = width;
   world->height = height;
   world->map_height = world->height;
-  world->map_width = 2000;
+  world->map_width = 1000;
   world->ground = height - 50;
   world->image = al_load_bitmap("images/sand_center.png");
   world->grass = al_load_bitmap("images/grass.png");
@@ -97,7 +97,7 @@ void draw_world(int *pressed)
 {
   draw_floor();
   draw_grass();
-  Collisions collisions = detect_collisions();
+  Collisions collisions = detect_collisions(world->map_width);
   
   draw_player(pressed, collisions);
 //  draw_points();

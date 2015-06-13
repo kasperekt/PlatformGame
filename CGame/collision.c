@@ -55,7 +55,7 @@ CollisionResult collision_up(CollisionData c)
   return result;
 }
 
-Collisions detect_collisions()
+Collisions detect_collisions(int map_width)
 {
   Collisions result;
   
@@ -65,7 +65,7 @@ Collisions detect_collisions()
   c.player_x = player->x;
   c.player_y = player->y;
   
-  result.world = detect_world_collision(c);
+  result.world = detect_world_collision(c, map_width);
   result.gem = detect_gem_collision(c);
   
   return result;
@@ -121,7 +121,7 @@ GemCollision detect_gem_collision(CollisionData c)
   return collision;
 }
 
-Collision detect_world_collision(CollisionData c)
+Collision detect_world_collision(CollisionData c, int map_width)
 {
   struct crate* it = crates;
   
@@ -131,6 +131,15 @@ Collision detect_world_collision(CollisionData c)
   collision.y = 0;
   
   CollisionResult result;
+  
+  // Map boundaries
+  if(c.player_x <= 0) {
+    collision.type |= BLOCKED_LEFT;
+    return collision;
+  } else if(c.player_right >= map_width) {
+    collision.type |= BLOCKED_RIGHT;
+    return collision;
+  }
   
   while(it) {
     c.obstacle_right = it->x + it->width;
