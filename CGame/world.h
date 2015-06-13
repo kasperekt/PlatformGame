@@ -18,13 +18,15 @@
 #include "collision.h"
 
 struct world {
-  float floor;
+  float floor, ground;
   int width, height;
   ALLEGRO_BITMAP *image;
+  ALLEGRO_BITMAP *grass;
 };
 
 void init_world(const int width, const int height);
 void draw_floor();
+void draw_grass();
 void draw_world(int *pressed);
 void destroy_world();
 

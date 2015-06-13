@@ -17,8 +17,10 @@ void init_world(const int width, const int height)
   world = malloc(sizeof(*world));
   world->width = width;
   world->height = height;
-  world->floor = height - 100;
+  world->ground = height - 50;
   world->image = al_load_bitmap("images/sand_center.png");
+  world->grass = al_load_bitmap("images/grass.png");
+  world->floor = world->ground - al_get_bitmap_height(world->grass);
   
   init_player(20.0, world->floor, world->floor);
   add_crate(200.0, world->floor);
@@ -33,7 +35,7 @@ void draw_floor()
   int image_height = al_get_bitmap_height(world->image);
   
   int x = world->width / image_width;
-  int y = world->height - world->floor;
+  int y = world->height - world->ground;
   
   al_hold_bitmap_drawing(1);
   for(int i = 0; i < x + 1; i++) {
@@ -46,9 +48,23 @@ void draw_floor()
   al_hold_bitmap_drawing(0);
 }
 
+void draw_grass()
+{
+  int image_width = al_get_bitmap_width(world->grass);
+  int x = world->width / image_width;
+  
+  al_hold_bitmap_drawing(1);
+  for(int i = 0; i < x + 1; i++) {
+    int x_pos = i * image_width;
+    al_draw_bitmap(world->grass, x_pos, world->floor, 0);
+  }
+  al_hold_bitmap_drawing(0);
+}
+
 void draw_world(int *pressed)
 {
   draw_floor();
+  draw_grass();
   Collision collision = detect_collision();
   
   draw_player(pressed, collision);
@@ -60,5 +76,6 @@ void destroy_world()
   destroy_crates();
   destroy_player();
   al_destroy_bitmap(world->image);
+  al_destroy_bitmap(world->grass);
   free(world);
 }
