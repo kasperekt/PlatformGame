@@ -11,6 +11,9 @@
 		406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D11B2C5C4E00914B78 /* sand_center.png */; };
 		406DE9D41B2C634200914B78 /* grass.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D31B2C633C00914B78 /* grass.png */; };
 		406DE9D61B2C897A00914B78 /* box.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D51B2C897600914B78 /* box.png */; };
+		406DE9D91B2C8C3500914B78 /* gem.c in Sources */ = {isa = PBXBuildFile; fileRef = 406DE9D71B2C8C3500914B78 /* gem.c */; };
+		406DE9DC1B2C907C00914B78 /* brick_wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9DA1B2C906B00914B78 /* brick_wall.png */; };
+		406DE9DD1B2C907F00914B78 /* gem_red.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9DB1B2C906B00914B78 /* gem_red.png */; };
 		40DE2F211B1B0C2D008585BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 40DE2F201B1B0C2D008585BF /* main.c */; };
 		40DE2F391B1B0C39008585BF /* liballegro_acodec-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */; };
 		40DE2F3A1B1B0C39008585BF /* liballegro_audio-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DE2F281B1B0C39008585BF /* liballegro_audio-static.a */; };
@@ -53,6 +56,8 @@
 			files = (
 				406DE9D01B2C517D00914B78 /* player.png in CopyFiles */,
 				406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */,
+				406DE9DC1B2C907C00914B78 /* brick_wall.png in CopyFiles */,
+				406DE9DD1B2C907F00914B78 /* gem_red.png in CopyFiles */,
 				406DE9D41B2C634200914B78 /* grass.png in CopyFiles */,
 				406DE9D61B2C897A00914B78 /* box.png in CopyFiles */,
 			);
@@ -65,6 +70,10 @@
 		406DE9D11B2C5C4E00914B78 /* sand_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand_center.png; sourceTree = "<group>"; };
 		406DE9D31B2C633C00914B78 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		406DE9D51B2C897600914B78 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
+		406DE9D71B2C8C3500914B78 /* gem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gem.c; sourceTree = "<group>"; };
+		406DE9D81B2C8C3500914B78 /* gem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gem.h; sourceTree = "<group>"; };
+		406DE9DA1B2C906B00914B78 /* brick_wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick_wall.png; sourceTree = "<group>"; };
+		406DE9DB1B2C906B00914B78 /* gem_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gem_red.png; sourceTree = "<group>"; };
 		40DE2F1D1B1B0C2D008585BF /* CGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DE2F201B1B0C2D008585BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		40DE2F271B1B0C39008585BF /* liballegro_acodec-static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "liballegro_acodec-static.a"; path = "../../../../usr/local/lib/liballegro_acodec-static.a"; sourceTree = "<group>"; };
@@ -144,6 +153,8 @@
 		406DE9CD1B2C399400914B78 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				406DE9DA1B2C906B00914B78 /* brick_wall.png */,
+				406DE9DB1B2C906B00914B78 /* gem_red.png */,
 				406DE9D51B2C897600914B78 /* box.png */,
 				406DE9D31B2C633C00914B78 /* grass.png */,
 				406DE9D11B2C5C4E00914B78 /* sand_center.png */,
@@ -209,6 +220,8 @@
 				40E1AF621B1BCA35009DFF09 /* collisiontype.h */,
 				40E1AF631B1BCC3D009DFF09 /* crate.c */,
 				40E1AF641B1BCC3D009DFF09 /* crate.h */,
+				406DE9D71B2C8C3500914B78 /* gem.c */,
+				406DE9D81B2C8C3500914B78 /* gem.h */,
 			);
 			path = CGame;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 				40DE2F211B1B0C2D008585BF /* main.c in Sources */,
 				40E1AF651B1BCC3D009DFF09 /* crate.c in Sources */,
 				40DE2F611B1B90AA008585BF /* player.c in Sources */,
+				406DE9D91B2C8C3500914B78 /* gem.c in Sources */,
 				40DE2F591B1B1AA1008585BF /* window.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,7 @@
 #include "player.h"
 #include "crate.h"
 #include "collision.h"
+#include "gem.h"
 
 struct world {
   float floor, ground;

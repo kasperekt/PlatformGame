@@ -24,9 +24,10 @@ void init_world(const int width, const int height)
   
   init_player(20.0, world->floor, world->floor);
   add_crate(200.0, world->floor);
-  add_crate(250.0, world->floor - 50);
+  add_crate(250.0, world->floor - 70);
   add_crate(400.0, world->floor);
   add_crate(600.0, world->floor);
+  add_gem(400, 400, 200);
 }
 
 void draw_floor()
@@ -69,10 +70,12 @@ void draw_world(int *pressed)
   
   draw_player(pressed, collision);
   draw_crates();
+  draw_gems();
 }
 
 void destroy_world()
 {
+  destroy_gems();
   destroy_crates();
   destroy_player();
   al_destroy_bitmap(world->image);
