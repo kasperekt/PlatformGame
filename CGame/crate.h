@@ -17,7 +17,6 @@
 
 struct crate {
   float x, y;
-  float size;
   int height, width;
   ALLEGRO_BITMAP *image;
   struct crate *next;

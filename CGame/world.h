@@ -29,6 +29,7 @@ struct world {
 };
 
 void init_world(const int width, const int height);
+float camera_update(float x, int width);
 void draw_floor();
 void draw_grass();
 void draw_points();

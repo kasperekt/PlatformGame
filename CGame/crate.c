@@ -15,7 +15,6 @@ void add_crate(float x, float y)
   struct crate* tmp = malloc(sizeof(*tmp));
   tmp->x = x;
   tmp->y = y;
-  tmp->size = 60;
   tmp->image = al_load_bitmap("images/box.png");
   tmp->width = al_get_bitmap_width(tmp->image);
   tmp->height = al_get_bitmap_height(tmp->image);
