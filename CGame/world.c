@@ -17,7 +17,7 @@ void init_world(const int width, const int height)
   world = malloc(sizeof(*world));
   world->width = width;
   world->height = height;
-  world->floor = height - 80;
+  world->floor = height - 100;
   
   init_player(20.0, world->floor, world->floor);
   add_crate(200.0, world->floor);
@@ -28,7 +28,7 @@ void init_world(const int width, const int height)
 
 void draw_world(bool *pressed)
 {
-  al_draw_filled_rectangle(0, world->floor, world->width, world->height, al_map_rgb(255, 0, 0));
+  al_draw_filled_rectangle(0, world->floor, world->width, world->height, al_map_rgb(0, 0, 0));
   Collision collision = detect_collision();
   
   draw_player(pressed, collision);

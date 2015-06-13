@@ -72,7 +72,7 @@ void game_shutdown()
 
 void draw()
 {
-  al_clear_to_color(al_map_rgb(0, 0, 0));
+  al_clear_to_color(al_map_rgb(199, 242, 244));
   draw_world(pressed_keys);
   al_flip_display();
 }

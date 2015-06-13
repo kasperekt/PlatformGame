@@ -52,7 +52,6 @@ void draw_player(bool *pressed, Collision collision)
   move_player(pressed, collision);
   
   al_draw_bitmap_region(player->image, animation[current][0], animation[current][1], player->width, player->height, player->x, player->y - player->height, player->direction);
-//  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 0);
 }
 
 void jump()
