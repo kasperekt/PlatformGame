@@ -39,28 +39,19 @@ void init_player(float x, float y, float floor_limit)
   player->velocity_y = 0.0;
   player->jumping = 0;
   player->position |= ON_FLOOR;
+  
   player->image = al_load_bitmap("images/player.png");
   player->width = 72;
   player->height = 97;
   player->active = 0;
+  player->direction = RIGHT;
 }
 
 void draw_player(bool *pressed, Collision collision)
 {
   move_player(pressed, collision);
   
-  if(player->active) {
-    a++;
-    
-    if(a == 2) {
-      current = (current + 1) % 11;
-      a = 0;
-    }
-  } else {
-    current = 7;
-  }
-  
-  al_draw_bitmap_region(player->image, animation[current][0], animation[current][1], player->width, player->height, player->x, player->y - player->height, 0);
+  al_draw_bitmap_region(player->image, animation[current][0], animation[current][1], player->width, player->height, player->x, player->y - player->height, player->direction);
 //  al_draw_rectangle(player->x, player->y - player->size, player->x + player->size, player->y, al_map_rgb(255, 255, 255), 0);
 }
 
@@ -86,10 +77,12 @@ void move_player(bool *pressed, Collision collision)
   }
   
   if(pressed[ALLEGRO_KEY_RIGHT] && !(collision.type & BLOCKED_RIGHT)) {
+    player->direction = RIGHT;
     player->active = 1;
     player->x += player->speed;
   }
   else if(pressed[ALLEGRO_KEY_LEFT] && !(collision.type & BLOCKED_LEFT)) {
+    player->direction = LEFT;
     player->active = 1;
     player->x -= player->speed;
   }
@@ -113,6 +106,17 @@ void move_player(bool *pressed, Collision collision)
       player->jumping = 0;
       player->y = player->floor_limit;
     }
+  }
+  
+  if(player->active) {
+    a++;
+    
+    if(a == 2) {
+      current = (current + 1) % 11;
+      a = 0;
+    }
+  } else {
+    current = 7;
   }
 }
 

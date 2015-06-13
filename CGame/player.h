@@ -16,6 +16,11 @@
 #include "collisiontype.h"
 
 typedef enum {
+  LEFT = ALLEGRO_FLIP_HORIZONTAL,
+  RIGHT = 0
+} PlayerDirection;
+
+typedef enum {
   ON_FLOOR = (1 << 0),
   FALLING = (1 << 1),
   ON_PLATFORM = (1 << 2)
@@ -31,6 +36,7 @@ struct player {
   int jumping;
   int active;
   PlayerPosition position;
+  PlayerDirection direction;
   ALLEGRO_BITMAP *image;
 };
 
