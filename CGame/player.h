@@ -27,7 +27,9 @@ struct player {
   float speed;
   float velocity_y;
   float floor_limit;
+  int height, width;
   int jumping;
+  int active;
   PlayerPosition position;
   ALLEGRO_BITMAP *image;
 };

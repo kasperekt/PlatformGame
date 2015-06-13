@@ -65,8 +65,8 @@ Collision detect_collision()
   struct crate* it = crates;
   
   CollisionData c;
-  c.player_right = player->x + player->size;
-  c.player_height = player->y - player->size;
+  c.player_right = player->x + player->width;
+  c.player_height = player->y - player->height;
   c.player_x = player->x;
   c.player_y = player->y;
   
