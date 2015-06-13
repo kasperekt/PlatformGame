@@ -11,8 +11,6 @@
 
 #include <stdio.h>
 #include <allegro5/allegro5.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_font.h>
 #include <allegro5/allegro_image.h>
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/gl.h>
@@ -22,7 +20,6 @@ extern int done;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_TIMER *timer;
-extern ALLEGRO_FONT *main_font;
 
 extern const int screen_width, screen_height;
 

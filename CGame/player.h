@@ -35,6 +35,7 @@ struct player {
   int height, width;
   int jumping;
   int active;
+  int points;
   PlayerPosition position;
   PlayerDirection direction;
   ALLEGRO_BITMAP *image;

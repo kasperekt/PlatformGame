@@ -34,6 +34,7 @@ void init_player(float x, float y, float floor_limit)
   player->x = x;
   player->y = y;
   player->speed = 2;
+  player->points = 0;
   player->floor_limit = floor_limit;
   player->velocity_y = 0.0;
   player->jumping = 0;
@@ -109,6 +110,7 @@ void move_player(int *pressed, Collisions collisions)
   }
   
   if(collisions.gem.gem_id) {
+    player->points += collisions.gem.points;
     remove_gem(collisions.gem.gem_id);
   }
 }

@@ -12,7 +12,6 @@ int done = 0;
 ALLEGRO_EVENT_QUEUE *event_queue = NULL;
 ALLEGRO_DISPLAY *display = NULL;
 ALLEGRO_TIMER *timer = NULL;
-ALLEGRO_FONT *main_font = NULL;
 
 const int screen_width = 800;
 const int screen_height = 600;
@@ -51,8 +50,6 @@ void init(const int fps)
   al_init_font_addon();
   al_init_ttf_addon();
   al_init_image_addon();
-  
-  main_font = al_load_font("/Library/Fonts/PTSans.ttc", 36, 0);
 
   al_register_event_source(event_queue, al_get_keyboard_event_source());
   al_register_event_source(event_queue, al_get_timer_event_source(timer));
@@ -64,7 +61,6 @@ void init(const int fps)
 void game_shutdown()
 {
   destroy_world();
-  if(main_font) al_destroy_font(main_font);
   if(timer) al_destroy_timer(timer);
   if(display) al_destroy_display(display);
   if(event_queue) al_destroy_event_queue(event_queue);

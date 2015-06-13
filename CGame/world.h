@@ -10,7 +10,10 @@
 #define __CGame__world__
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 #include "player.h"
@@ -28,6 +31,7 @@ struct world {
 void init_world(const int width, const int height);
 void draw_floor();
 void draw_grass();
+void draw_points();
 void draw_world(int *pressed);
 void destroy_world();
 

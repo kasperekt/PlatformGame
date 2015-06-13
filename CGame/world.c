@@ -9,10 +9,12 @@
 #include "world.h"
 
 struct world* world = NULL;
+ALLEGRO_FONT *font = NULL;
 
 void init_world(const int width, const int height)
 {
   al_init_primitives_addon();
+  font = al_load_ttf_font("/Library/Fonts/PTSans.ttc", 36, 0);
   
   world = malloc(sizeof(*world));
   world->width = width;
@@ -63,6 +65,14 @@ void draw_grass()
   al_hold_bitmap_drawing(0);
 }
 
+void draw_points()
+{
+  char *points;
+  sprintf(points, "%d", player->points);
+  
+  al_draw_text(font, al_map_rgb(0, 0, 0), world->width / 2 - 20, 10, 0, points);
+}
+
 void draw_world(int *pressed)
 {
   draw_floor();
@@ -70,6 +80,7 @@ void draw_world(int *pressed)
   Collisions collisions = detect_collisions();
   
   draw_player(pressed, collisions);
+  draw_points();
   draw_crates(crates);
   draw_gems(gems);
 }
@@ -81,5 +92,6 @@ void destroy_world()
   destroy_player();
   al_destroy_bitmap(world->image);
   al_destroy_bitmap(world->grass);
+  al_destroy_font(font);
   free(world);
 }
