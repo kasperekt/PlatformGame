@@ -147,14 +147,21 @@ void draw_grass()
 
 void draw_points(int finished)
 {
-  char *points = "0";
-//  sprintf(points, "%d", player->points);
+  char points[5];
+  sprintf(points, "%d", player->points);
   int x = (int) camera_update(player->x, player->width);
+
+  int x_pos = 20 + x;
+  int y_pos = 10;
+  int flags = 0;
   
-  int x_pos = finished ? (world->width / 2) + x : 20 + x;
-  int y_pos = finished ? (world->height / 2) : 10;
+  if(finished) {
+    x_pos = (world->width / 2) + x;
+    y_pos = (world->height / 2) - 30;
+    flags = ALLEGRO_ALIGN_CENTRE;
+  }
   
-  al_draw_text(font, al_map_rgb(0, 0, 0), x_pos, y_pos, 0, points);
+  al_draw_text(font, al_map_rgb(0, 0, 0), x_pos, y_pos, flags, points);
 }
 
 void draw_world(int *pressed)
@@ -163,11 +170,11 @@ void draw_world(int *pressed)
   draw_grass();
   Collisions collisions = detect_collisions(world->map_width);
   
+  draw_key();
   draw_player(pressed, collisions);
   draw_points(collisions.finished);
   draw_crates(crates);
   draw_gems(gems);
-  draw_key();
 
   float camera_position = camera_update(player->x, player->width);
   al_identity_transform(&camera);
