@@ -20,6 +20,7 @@
 #include "crate.h"
 #include "collision.h"
 #include "gem.h"
+#include "key.h"
 
 struct world {
   float floor, ground;

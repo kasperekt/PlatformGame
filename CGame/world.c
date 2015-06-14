@@ -45,6 +45,7 @@ void add_element(char *data)
       
       sscanf(x_str, "%f", &x);
       if(*y_str == 'x') y = world->floor;
+      else sscanf(y_str, "%f", &y);
       
       add_crate(x, y);
       break;
@@ -60,6 +61,18 @@ void add_element(char *data)
       sscanf(points_str, "%d", &points);
       
       add_gem(x, y, points);
+      break;
+    }
+    case 3: {
+      int x, y;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%d", &x);
+      if(*y_str == 'x') y = world->floor;
+      else sscanf(y_str, "%d", &y);
+      
+      add_key(x, y);
       break;
     }
     default:
@@ -151,6 +164,7 @@ void draw_world(int *pressed)
   draw_points();
   draw_crates(crates);
   draw_gems(gems);
+  draw_key();
 
   float camera_position = camera_update(player->x, player->width);
   al_identity_transform(&camera);
@@ -160,6 +174,7 @@ void draw_world(int *pressed)
 
 void destroy_world()
 {
+  destroy_key();
   destroy_gems();
   destroy_crates();
   destroy_player();
