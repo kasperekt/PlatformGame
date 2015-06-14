@@ -32,5 +32,6 @@ void destroy_key()
   if(key) {
     al_destroy_bitmap(key->image);
     free(key);
+    key = NULL;
   }
 }

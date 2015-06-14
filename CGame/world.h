@@ -35,6 +35,7 @@ void init_world(const int width, const int height);
 void load_map(const char *filename);
 void add_element(char *data);
 float camera_update(float x, int width);
+void reset_game();
 void draw_floor();
 void draw_grass();
 void count_points();

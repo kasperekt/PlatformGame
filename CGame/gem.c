@@ -80,4 +80,6 @@ void destroy_gems()
     al_destroy_bitmap(gems->image);
     free(gems);
   }
+  
+  gems = NULL;
 }

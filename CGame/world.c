@@ -123,6 +123,7 @@ void draw_world(int *pressed)
   Collisions collisions = detect_collisions(world->map_width);
   
   if(!collisions.finished) world->game_timer += 1000 / 60;
+  if(pressed[ALLEGRO_KEY_R]) reset_game();
   
   draw_key();
   draw_player(pressed, collisions);
@@ -144,6 +145,15 @@ void count_points()
   }
   
   player->points = player->points + time_points;
+}
+
+void reset_game()
+{
+  destroy_key();
+  destroy_gems();
+  destroy_crates();
+  destroy_player();
+  load_map("/Users/tomek/University/CGame/map.txt");
 }
 
 void destroy_world()

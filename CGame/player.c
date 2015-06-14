@@ -135,4 +135,5 @@ void destroy_player()
 {
   al_destroy_bitmap(player->image);
   free(player);
+  player = NULL;
 }

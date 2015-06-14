@@ -46,4 +46,6 @@ void destroy_crates()
     free(tmp);
     tmp = crates;
   }
+  
+  crates = NULL;
 }
