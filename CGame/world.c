@@ -11,6 +11,7 @@
 struct world* world = NULL;
 ALLEGRO_FONT *font = NULL;
 ALLEGRO_TRANSFORM camera;
+int counted = 0;
 
 void init_world(const int width, const int height)
 {
@@ -110,7 +111,7 @@ void draw_points(int finished)
     x_pos = (world->width / 2) + x;
     y_pos = (world->height / 2) - 30;
     flags = ALLEGRO_ALIGN_CENTRE;
-//    count_points();
+    if(!counted) count_points();
   }
   
   al_draw_text(font, al_map_rgb(0, 0, 0), x_pos, y_pos, flags, points);
@@ -149,6 +150,7 @@ void count_points()
   }
   
   player->points = player->points + time_points;
+  counted = 1;
 }
 
 void reset_game()
