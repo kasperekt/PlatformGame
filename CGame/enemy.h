@@ -23,7 +23,9 @@ typedef struct enemy {
   float speed;
   float distance;
   int range;
+  int animation_counter;
   int width, height;
+  int frame;
   ALLEGRO_BITMAP *image;
   EnemyDirection direction;
   struct enemy *next;

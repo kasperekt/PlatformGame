@@ -22,6 +22,8 @@ void add_enemy(float x, float y, float speed, int range)
   tmp->width = 50;
   tmp->height = 28;
   tmp->direction = ENEMY_RIGHT;
+  tmp->animation_counter = 0;
+  tmp->frame = 0;
   tmp->next = NULL;
   
   if(!enemies) {
@@ -49,7 +51,12 @@ void draw_enemies(Enemy *e)
 {
   if(e) {
     move_enemy(e);
-    al_draw_bitmap_region(e->image, 0, 0, e->width, e->height, e->x, e->y - e->height, e->direction);
+    if(e->animation_counter++ > 15) {
+      e->animation_counter = 0;
+      e->frame = (e->frame + 50) % 100;
+    }
+    
+    al_draw_bitmap_region(e->image, e->frame, 0, e->width, e->height, e->x, e->y - e->height, e->direction);
     draw_enemies(e->next);
   }
 }
