@@ -80,7 +80,6 @@ void move_player(int *pressed, Collisions collisions)
   }
   
   if(pressed[ALLEGRO_KEY_RIGHT] && !(collisions.world.type & BLOCKED_RIGHT)) {
-    printf("Right: %d\n", i++);
     player->direction = RIGHT;
     player->active = 1;
     player->x += player->speed;
