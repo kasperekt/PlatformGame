@@ -21,6 +21,7 @@
 #include "collision.h"
 #include "gem.h"
 #include "key.h"
+#include "enemy.h"
 
 struct world {
   float floor, ground;

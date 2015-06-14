@@ -124,12 +124,16 @@ void draw_world(int *pressed)
   
   if(!collisions.finished) world->game_timer += 1000 / 60;
   if(pressed[ALLEGRO_KEY_R]) reset_game();
+  if(collisions.touched_enemy) {
+    reset_game();
+  }
   
   draw_key();
   draw_player(pressed, collisions);
   draw_points(collisions.finished);
   draw_crates(crates);
   draw_gems(gems);
+  draw_enemies(enemies);
 
   float camera_position = camera_update(player->x, player->width);
   al_identity_transform(&camera);
@@ -153,6 +157,8 @@ void reset_game()
   destroy_gems();
   destroy_crates();
   destroy_player();
+  destroy_enemies();
+  world->game_timer = 0;
   load_map("/Users/tomek/University/CGame/map.txt");
 }
 
@@ -162,6 +168,7 @@ void destroy_world()
   destroy_gems();
   destroy_crates();
   destroy_player();
+  destroy_enemies();
   al_destroy_bitmap(world->image);
   al_destroy_bitmap(world->grass);
   al_destroy_font(font);
@@ -227,6 +234,24 @@ void add_element(char *data)
       else sscanf(y_str, "%d", &y);
       
       add_key(x, y);
+      break;
+    }
+    case 4: {
+      float x, y, speed;
+      int range;
+      
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      char *speed_str = strtok(NULL, ",");
+      char *range_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%f", &x);
+      if(*y_str == 'x') y = world->floor;
+      else sscanf(y_str, "%f", &y);
+      sscanf(speed_str, "%f", &speed);
+      sscanf(range_str, "%d", &range);
+      
+      add_enemy(x, y, speed, range);
       break;
     }
     default:

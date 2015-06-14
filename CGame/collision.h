@@ -15,6 +15,7 @@
 #include "crate.h"
 #include "gem.h"
 #include "key.h"
+#include "enemy.h"
 
 typedef struct collision_data {
   int player_height, player_right;
@@ -29,6 +30,7 @@ typedef struct collision_result {
 } CollisionResult;
 
 int detect_key_collision(CollisionData c);
+int detect_enemy_collision(CollisionData c);
 Collision detect_world_collision(CollisionData c, int map_width);
 GemCollision detect_gem_collision(CollisionData c);
 Collisions detect_collisions(int map_width);

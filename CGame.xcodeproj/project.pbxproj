@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4052801B1B2D9681007359BB /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 405280191B2D9681007359BB /* key.c */; };
 		4052801D1B2D9A51007359BB /* key.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4052801C1B2D9A4C007359BB /* key.png */; };
+		405280201B2DF3BB007359BB /* enemy.c in Sources */ = {isa = PBXBuildFile; fileRef = 4052801E1B2DF3BB007359BB /* enemy.c */; };
+		405280221B2DFA5B007359BB /* enemy.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 405280211B2DFA54007359BB /* enemy.png */; };
 		406DE9D01B2C517D00914B78 /* player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9CF1B2C516200914B78 /* player.png */; };
 		406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D11B2C5C4E00914B78 /* sand_center.png */; };
 		406DE9D41B2C634200914B78 /* grass.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 406DE9D31B2C633C00914B78 /* grass.png */; };
@@ -57,6 +59,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				406DE9D01B2C517D00914B78 /* player.png in CopyFiles */,
+				405280221B2DFA5B007359BB /* enemy.png in CopyFiles */,
 				406DE9D21B2C5C5200914B78 /* sand_center.png in CopyFiles */,
 				406DE9DC1B2C907C00914B78 /* brick_wall.png in CopyFiles */,
 				4052801D1B2D9A51007359BB /* key.png in CopyFiles */,
@@ -72,6 +75,9 @@
 		405280191B2D9681007359BB /* key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = key.c; sourceTree = "<group>"; };
 		4052801A1B2D9681007359BB /* key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = key.h; sourceTree = "<group>"; };
 		4052801C1B2D9A4C007359BB /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
+		4052801E1B2DF3BB007359BB /* enemy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = enemy.c; sourceTree = "<group>"; };
+		4052801F1B2DF3BB007359BB /* enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enemy.h; sourceTree = "<group>"; };
+		405280211B2DFA54007359BB /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
 		406DE9CF1B2C516200914B78 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		406DE9D11B2C5C4E00914B78 /* sand_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand_center.png; sourceTree = "<group>"; };
 		406DE9D31B2C633C00914B78 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		406DE9CD1B2C399400914B78 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				405280211B2DFA54007359BB /* enemy.png */,
 				4052801C1B2D9A4C007359BB /* key.png */,
 				406DE9DA1B2C906B00914B78 /* brick_wall.png */,
 				406DE9DB1B2C906B00914B78 /* gem_red.png */,
@@ -231,6 +238,8 @@
 				406DE9D81B2C8C3500914B78 /* gem.h */,
 				405280191B2D9681007359BB /* key.c */,
 				4052801A1B2D9681007359BB /* key.h */,
+				4052801E1B2DF3BB007359BB /* enemy.c */,
+				4052801F1B2DF3BB007359BB /* enemy.h */,
 			);
 			path = CGame;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 				40DE2F641B1BC6FC008585BF /* collision.c in Sources */,
 				40DE2F5E1B1B4825008585BF /* world.c in Sources */,
 				40DE2F211B1B0C2D008585BF /* main.c in Sources */,
+				405280201B2DF3BB007359BB /* enemy.c in Sources */,
 				40E1AF651B1BCC3D009DFF09 /* crate.c in Sources */,
 				40DE2F611B1B90AA008585BF /* player.c in Sources */,
 				406DE9D91B2C8C3500914B78 /* gem.c in Sources */,

@@ -31,6 +31,7 @@ typedef struct {
 
 typedef struct {
   int finished;
+  int touched_enemy;
   GemCollision gem;
   Collision world;
 } Collisions;

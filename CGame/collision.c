@@ -69,8 +69,31 @@ Collisions detect_collisions(int map_width)
   result.world = detect_world_collision(c, map_width);
   result.gem = detect_gem_collision(c);
   result.finished = detect_key_collision(c);
+  result.touched_enemy = detect_enemy_collision(c);
   
   return result;
+}
+
+int detect_enemy_collision(CollisionData c)
+{
+  if(!enemies) return 0;
+  Enemy *it = enemies;
+  
+  while(it) {
+    c.obstacle_right = it->x + it->width;
+    c.obstacle_height = it->y - it->height;
+    c.obstacle_x = it->x;
+    c.obstacle_y = it->y;
+    
+    if(collision_down(c).has) return 1;
+    if(collision_up(c).has) return 1;
+    if(collision_left(c).has) return 1;
+    if(collision_right(c).has) return 1;
+    
+    it = it->next;
+  }
+  
+  return 0;
 }
 
 int detect_key_collision(CollisionData c)

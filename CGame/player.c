@@ -59,7 +59,7 @@ void draw_player(int *pressed, Collisions collisions)
 void jump()
 {
   player->jumping = 1;
-  player->velocity_y = -10.0;
+  player->velocity_y = -10.5;
 }
 
 void move_player(int *pressed, Collisions collisions)
