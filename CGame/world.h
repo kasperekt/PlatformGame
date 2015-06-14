@@ -23,6 +23,13 @@
 #include "key.h"
 #include "enemy.h"
 
+/*
+ * Struktura świata, zawiera dane na temat:
+ * - położenia "podłogi" i ziemii
+ * - szerokość i wysokość ekranu
+ * - szerokość mapy
+ * - timer liczący czas gry
+ */
 struct world {
   float floor, ground;
   int width, height;
@@ -32,16 +39,49 @@ struct world {
   ALLEGRO_BITMAP *grass;
 };
 
+/*
+ * Tworzy świat, dodaje graczy, przeszkody itp.
+ */
 void init_world(const int width, const int height);
+/*
+ * Ładuje mapę z pliku tekstowego
+ */
 void load_map(const char *filename);
+/*
+ * Dodaje element mapy na podstawie podanego stringu z danymi
+ */
 void add_element(char *data);
+/*
+ * Odświeża położenie kamery, jeśli gracz wychodzi dalej poza ekran
+ */
 float camera_update(float x, int width);
+/*
+ * Restartuje stan gry, dodaje od nowa graczy, elementy itp.
+ */
 void reset_game();
+/*
+ * Rysuje tekstury podłoża
+ */
 void draw_floor();
+/*
+ * Rysuje teksture trawy
+ */
 void draw_grass();
+/*
+ * Przelicza zdobyte punkty na podstawie czasu
+ */
 void count_points();
+/*
+ * Rysuje wynik
+ */
 void draw_points(int finished);
+/*
+ * Rysuje cały świat
+ */
 void draw_world(int *pressed);
+/*
+ * Dealokuje pamięc
+ */
 void destroy_world();
 
 #endif /* defined(__CGame__world__) */

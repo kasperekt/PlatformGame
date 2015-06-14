@@ -16,17 +16,38 @@
 #include <OpenGL/gl.h>
 #include "world.h"
 
+/*
+ * Zmienna informująca o tym, czy gra została ukończona
+ */
 extern int done;
 extern ALLEGRO_DISPLAY *display;
 extern ALLEGRO_EVENT_QUEUE *event_queue;
 extern ALLEGRO_TIMER *timer;
 
+/*
+ * Szerokość i wysokość ekrany
+ */
 extern const int screen_width, screen_height;
 
+/*
+ * Inicializacja okienka do gry, uruchamianie potrzebnych modułów
+ */
 void init(const int fps);
+/*
+ * Opuszcza program razem z wyświetloną informacją o błędzie
+ */
 void abort_game(const char* message);
+/*
+ * Rysuje świat
+ */
 void draw();
+/*
+ * Zamyka gre, uruchamia funkcje zwalniające pamięć
+ */
 void game_shutdown();
+/*
+ * Pętla gry, dodaje klawisze do tablicy z wciśniętymi klawiszami, odświeża obraz
+ */
 void game_loop();
 
 #endif /* defined(__CGame__window__) */

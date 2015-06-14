@@ -13,6 +13,9 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
 
+/*
+ * Struktura dla diamentu
+ */
 typedef struct gems {
   int gem_id;
   int x, y;
@@ -24,9 +27,21 @@ typedef struct gems {
 
 extern Gems *gems;
 
+/*
+ * Dodawanie diamentu na liste diamentów
+ */
 void add_gem(int x, int y, int points);
+/*
+ * Usuwanie diamentu z listy
+ */
 void remove_gem(int gem_id);
+/*
+ * Zwalnianie pamięci dla diamentów
+ */
 void destroy_gems();
+/*
+ * Rysowanie diamentów
+ */
 void draw_gems(Gems *gem);
 
 #endif /* defined(__CGame__gem__) */

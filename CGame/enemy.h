@@ -13,11 +13,17 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
 
+/*
+ * Enum mówiący o kierunku poruszania się wroga
+ */
 typedef enum {
   ENEMY_LEFT = 0,
   ENEMY_RIGHT = ALLEGRO_FLIP_HORIZONTAL
 } EnemyDirection;
 
+/*
+ * Struktura dla wroga, jego prędkość, możliwy dystans do przebycia itp. (stack)
+ */
 typedef struct enemy {
   float x, y;
   float speed;
@@ -33,9 +39,21 @@ typedef struct enemy {
 
 extern Enemy* enemies;
 
+/*
+ * Dodawanie wroga na stos
+ */
 void add_enemy(float x, float y, float speed, int range);
+/*
+ * Przesuwanie wroga
+ */
 void move_enemy(Enemy *e);
+/*
+ * Rysowanie wrogów
+ */
 void draw_enemies(Enemy *e);
+/*
+ * Zwalnianie pamięci wrogów
+ */
 void destroy_enemies();
 
 #endif /* defined(__CGame__enemy__) */

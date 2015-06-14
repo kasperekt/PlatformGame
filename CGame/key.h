@@ -13,6 +13,9 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
 
+/*
+ * Tworzy świat, dodaje graczy, przeszkody itp.
+ */
 typedef struct {
   int x, y;
   int width, height;
@@ -21,8 +24,17 @@ typedef struct {
 
 extern Key* key;
 
+/*
+ * Dodawanie klucza (może być tylko 1)
+ */
 void add_key(int x, int y);
+/*
+ * Rysowanie klucza
+ */
 void draw_key();
+/*
+ * Zwalnianie pamięci dla klucza
+ */
 void destroy_key();
 
 #endif /* defined(__CGame__key__) */

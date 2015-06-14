@@ -15,6 +15,9 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 
+/*
+ * Struktura dla skrzyni
+ */
 struct crate {
   float x, y;
   int height, width;
@@ -24,8 +27,17 @@ struct crate {
 
 extern struct crate* crates;
 
+/*
+ * Dodawanie nowej skrzyni
+ */
 void add_crate(float x, float y);
+/*
+ * Zwalnianie pamięci dla skrzyni
+ */
 void destroy_crates();
+/*
+ * Rysowanie skrzyni
+ */
 void draw_crates(struct crate *c);
 
 #endif /* defined(__CGame__crate__) */
