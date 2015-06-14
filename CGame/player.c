@@ -11,6 +11,7 @@
 struct player* player = NULL;
 const float gravity = 0.5;
 
+  int i = 0;
 int current = 0;
 int animation_control = 0;
 const int animation_steps = 11;
@@ -33,7 +34,7 @@ void init_player(float x, float y, float floor_limit)
   player = malloc(sizeof(*player));
   player->x = x;
   player->y = y;
-  player->speed = 2;
+  player->speed = 2.2;
   player->points = 0;
   player->floor_limit = floor_limit;
   player->velocity_y = 0.0;
@@ -79,6 +80,7 @@ void move_player(int *pressed, Collisions collisions)
   }
   
   if(pressed[ALLEGRO_KEY_RIGHT] && !(collisions.world.type & BLOCKED_RIGHT)) {
+    printf("Right: %d\n", i++);
     player->direction = RIGHT;
     player->active = 1;
     player->x += player->speed;

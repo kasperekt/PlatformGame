@@ -7,14 +7,15 @@
 //
 
 #include "collision.h"
+int ii = 0;
 
 CollisionResult collision_right(CollisionData c)
 {
   CollisionResult result;
   result.has = c.player_right >= c.obstacle_x &&
                c.player_y > c.obstacle_height &&
-               c.player_height <= c.obstacle_y &&
-               c.player_x < c.obstacle_right;
+               c.player_height < c.obstacle_y &&
+               c.player_x < c.obstacle_x;
   
   return result;
 }
@@ -24,8 +25,8 @@ CollisionResult collision_left(CollisionData c)
   CollisionResult result;
   result.has = c.player_x <= c.obstacle_right &&
                c.player_y > c.obstacle_height &&
-               c.player_height <= c.obstacle_y &&
-               c.player_x >= c.obstacle_right;
+               c.player_height < c.obstacle_y &&
+               c.player_right > c.obstacle_right;
   
   return result;
 }
@@ -177,6 +178,7 @@ Collision detect_world_collision(CollisionData c, int map_width)
     
     result = collision_left(c);
     if(result.has) {
+      printf("Coll: %d\n", ii++);
       collision.type |= BLOCKED_LEFT;
     }
     
