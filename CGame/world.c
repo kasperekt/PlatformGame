@@ -23,6 +23,7 @@ void init_world(const int width, const int height)
   world->map_height = world->height;
   world->map_width = 0;
   world->ground = height - 50;
+  world->game_timer = 0;
   world->image = al_load_bitmap("images/sand_center.png");
   world->grass = al_load_bitmap("images/grass.png");
   world->floor = world->ground - al_get_bitmap_height(world->grass);
@@ -97,7 +98,7 @@ void draw_grass()
 
 void draw_points(int finished)
 {
-  char points[5];
+  char points[10];
   sprintf(points, "%d", player->points);
   int x = (int) camera_update(player->x, player->width);
 
@@ -109,6 +110,7 @@ void draw_points(int finished)
     x_pos = (world->width / 2) + x;
     y_pos = (world->height / 2) - 30;
     flags = ALLEGRO_ALIGN_CENTRE;
+//    count_points();
   }
   
   al_draw_text(font, al_map_rgb(0, 0, 0), x_pos, y_pos, flags, points);
@@ -119,6 +121,8 @@ void draw_world(int *pressed)
   draw_floor();
   draw_grass();
   Collisions collisions = detect_collisions(world->map_width);
+  
+  if(!collisions.finished) world->game_timer += 1000 / 60;
   
   draw_key();
   draw_player(pressed, collisions);
@@ -132,6 +136,16 @@ void draw_world(int *pressed)
   al_use_transform(&camera);
 }
 
+void count_points()
+{
+  int time_points = player->points - (world->game_timer / 100);
+  if(time_points < 0) {
+    time_points = 0;
+  }
+  
+  player->points = player->points + time_points;
+}
+
 void destroy_world()
 {
   destroy_key();
@@ -143,7 +157,6 @@ void destroy_world()
   al_destroy_font(font);
   free(world);
 }
-
 
 void add_element(char *data)
 {

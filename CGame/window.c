@@ -15,7 +15,7 @@ ALLEGRO_TIMER *timer = NULL;
 
 const int screen_width = 800;
 const int screen_height = 600;
-int FPS = 60;
+int game_timer;
 
 int pressed_keys[ALLEGRO_KEY_MAX] = { 0 };
 

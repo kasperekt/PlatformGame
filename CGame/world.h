@@ -26,6 +26,7 @@ struct world {
   float floor, ground;
   int width, height;
   int map_width, map_height;
+  float game_timer;
   ALLEGRO_BITMAP *image;
   ALLEGRO_BITMAP *grass;
 };
@@ -36,6 +37,7 @@ void add_element(char *data);
 float camera_update(float x, int width);
 void draw_floor();
 void draw_grass();
+void count_points();
 void draw_points(int finished);
 void draw_world(int *pressed);
 void destroy_world();
