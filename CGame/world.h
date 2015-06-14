@@ -36,7 +36,7 @@ void add_element(char *data);
 float camera_update(float x, int width);
 void draw_floor();
 void draw_grass();
-void draw_points();
+void draw_points(int finished);
 void draw_world(int *pressed);
 void destroy_world();
 

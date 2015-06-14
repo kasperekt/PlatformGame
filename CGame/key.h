@@ -19,6 +19,8 @@ typedef struct {
   ALLEGRO_BITMAP *image;
 } Key;
 
+extern Key* key;
+
 void add_key(int x, int y);
 void draw_key();
 void destroy_key();

@@ -64,6 +64,7 @@ void jump()
 void move_player(int *pressed, Collisions collisions)
 {
   player->active = 0;
+  if(collisions.finished) return;
   
   if(collisions.world.type & BLOCKED_DOWN) {
     player->jumping = 0;

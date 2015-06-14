@@ -67,8 +67,25 @@ Collisions detect_collisions(int map_width)
   
   result.world = detect_world_collision(c, map_width);
   result.gem = detect_gem_collision(c);
+  result.finished = detect_key_collision(c);
   
   return result;
+}
+
+int detect_key_collision(CollisionData c)
+{
+  if(!key) return 0;
+  c.obstacle_right = key->x + key->width;
+  c.obstacle_height = key->y - key->height;
+  c.obstacle_x = key->x;
+  c.obstacle_y = key->y;
+  
+  if(collision_down(c).has) return 1;
+  if(collision_up(c).has) return 1;
+  if(collision_left(c).has) return 1;
+  if(collision_right(c).has) return 1;
+  
+  return 0;
 }
 
 GemCollision detect_gem_collision(CollisionData c)

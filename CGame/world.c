@@ -145,13 +145,16 @@ void draw_grass()
   al_hold_bitmap_drawing(0);
 }
 
-void draw_points()
+void draw_points(int finished)
 {
-  char *points;
-  sprintf(points, "%d", player->points);
+  char *points = "0";
+//  sprintf(points, "%d", player->points);
   int x = (int) camera_update(player->x, player->width);
   
-  al_draw_text(font, al_map_rgb(0, 0, 0), 20 + x, 10, 0, points);
+  int x_pos = finished ? (world->width / 2) + x : 20 + x;
+  int y_pos = finished ? (world->height / 2) : 10;
+  
+  al_draw_text(font, al_map_rgb(0, 0, 0), x_pos, y_pos, 0, points);
 }
 
 void draw_world(int *pressed)
@@ -161,7 +164,7 @@ void draw_world(int *pressed)
   Collisions collisions = detect_collisions(world->map_width);
   
   draw_player(pressed, collisions);
-  draw_points();
+  draw_points(collisions.finished);
   draw_crates(crates);
   draw_gems(gems);
   draw_key();

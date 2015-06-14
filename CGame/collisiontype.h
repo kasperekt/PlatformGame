@@ -30,6 +30,7 @@ typedef struct {
 } GemCollision;
 
 typedef struct {
+  int finished;
   GemCollision gem;
   Collision world;
 } Collisions;
