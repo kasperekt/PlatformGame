@@ -21,63 +21,13 @@ void init_world(const int width, const int height)
   world->width = width;
   world->height = height;
   world->map_height = world->height;
-  world->map_width = 1000;
+  world->map_width = 0;
   world->ground = height - 50;
   world->image = al_load_bitmap("images/sand_center.png");
   world->grass = al_load_bitmap("images/grass.png");
   world->floor = world->ground - al_get_bitmap_height(world->grass);
-  
-  init_player(20.0, world->floor, world->floor);
-  load_map("/Users/tomek/University/CGame/map.txt");
-}
 
-void add_element(char *data)
-{
-  int type;
-  char* str = strtok(data, "=,");
-  sscanf(str, "%d", &type);
-  
-  switch(type) {
-    case 1: {
-      float x, y;
-      char *x_str = strtok(NULL, ",");
-      char *y_str = strtok(NULL, ",");
-      
-      sscanf(x_str, "%f", &x);
-      if(*y_str == 'x') y = world->floor;
-      else sscanf(y_str, "%f", &y);
-      
-      add_crate(x, y);
-      break;
-    }
-    case 2: {
-      int x, y, points;
-      char *x_str = strtok(NULL, ",");
-      char *y_str = strtok(NULL, ",");
-      char *points_str = strtok(NULL, ",");
-      
-      sscanf(x_str, "%d", &x);
-      sscanf(y_str, "%d", &y);
-      sscanf(points_str, "%d", &points);
-      
-      add_gem(x, y, points);
-      break;
-    }
-    case 3: {
-      int x, y;
-      char *x_str = strtok(NULL, ",");
-      char *y_str = strtok(NULL, ",");
-      
-      sscanf(x_str, "%d", &x);
-      if(*y_str == 'x') y = world->floor;
-      else sscanf(y_str, "%d", &y);
-      
-      add_key(x, y);
-      break;
-    }
-    default:
-      printf("None\n");
-  }
+  load_map("/Users/tomek/University/CGame/map.txt");
 }
 
 void load_map(const char* filename)
@@ -192,4 +142,71 @@ void destroy_world()
   al_destroy_bitmap(world->grass);
   al_destroy_font(font);
   free(world);
+}
+
+
+void add_element(char *data)
+{
+  int type;
+  char* str = strtok(data, "=,");
+  sscanf(str, "%d", &type);
+  
+  switch(type) {
+    case 0: {
+      float player_x, player_y;
+      int map_width;
+      
+      char *map_str = strtok(NULL, ",");
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      
+      sscanf(map_str, "%d", &map_width);
+      sscanf(x_str, "%f", &player_x);
+      if(*y_str == 'x') player_y = world->floor;
+      else sscanf(y_str, "%f", &player_y);
+      
+      world->map_width = map_width;
+      init_player(player_x, player_y, world->floor);
+      break;
+    }
+    case 1: {
+      float x, y;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%f", &x);
+      if(*y_str == 'x') y = world->floor;
+      else sscanf(y_str, "%f", &y);
+      
+      add_crate(x, y);
+      break;
+    }
+    case 2: {
+      int x, y, points;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      char *points_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%d", &x);
+      sscanf(y_str, "%d", &y);
+      sscanf(points_str, "%d", &points);
+      
+      add_gem(x, y, points);
+      break;
+    }
+    case 3: {
+      int x, y;
+      char *x_str = strtok(NULL, ",");
+      char *y_str = strtok(NULL, ",");
+      
+      sscanf(x_str, "%d", &x);
+      if(*y_str == 'x') y = world->floor;
+      else sscanf(y_str, "%d", &y);
+      
+      add_key(x, y);
+      break;
+    }
+    default:
+      printf("None\n");
+  }
 }
